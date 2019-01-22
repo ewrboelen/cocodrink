@@ -21,6 +21,22 @@ namespace Cocodrinks.Models
         public DbSet<Cocodrinks.Models.Order> Orders { get; set; }
         public DbSet<Cocodrinks.Models.Image> Images { get; set; }
     }
+
+    public class LoginViewModel
+    {
+        [Required]
+        [Display(Name = "User")]
+        public string Name { get; set; }
+
+        
+        [EmailAddress]
+        [Display(Name = "Email Address")]
+        public string Email { get; set; }
+
+        [Required]
+        [DataType(DataType.Password)]
+        public string Password { get; set; }
+    }
     public class User
     {
         public int Id { get; set; }

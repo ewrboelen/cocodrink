@@ -1,10 +1,57 @@
+@model Cocodrinks.Models.LoginViewModel
 @{
     ViewData["Title"] = "Login Page";
     //Layout = "~/Views/Shared/_LoginLayout.cshtml";
     Layout = "../Shared/_LoginLayout.cshtml";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>please log in</p>
+<div class="split left">
+  
+    <div class="text-center">
+        <h1 class="display-4">Welcome to</h1>
+        <h1 class="display-4">cocodrinks</h1>
+    </div>
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col col-lg-2">
+        
+            </div>
+            <div class="col"><br>
+                <p>please log in</p>
+
+                <form asp-action="DoLogin">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group row">
+                        <label asp-for="Name" class="col-sm-2 control-label"></label>
+                        <div class="col-sm-10">
+                            <input asp-for="Name" class="form-control" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="Password" class="col-sm-2 control-label"></label>
+                        <div class="col-sm-10">
+                            <input asp-for="Password" class="form-control" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Login" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        <div class="col col-lg-2">
+        
+        </div>
+    </div>
+    
+</div>
+
+<div class="split right">
+  
+    <div class="text-center">
+        <div class="sodaback">
+            <img src="/media/soda.PNG" />
+        </div>
+    </div>
 </div>

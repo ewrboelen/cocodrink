@@ -54,3 +54,47 @@ body {
   height: 60px;
   line-height: 60px; /* Vertically center the text there */
 }
+
+/* Split the screen in half */
+.split {
+  height: 80%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 10%;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* Control the left side */
+.left {
+  left: 0;
+  
+}
+
+/* Control the right side */
+.right {
+  right: 0;
+ 
+}
+
+.sodaback{
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+ /* padding: 34.37% 0 0 0;  34.37% = 100 / (w / h) = 100 / (640 / 220) */
+ padding: 54.37% 0 0 0;
+}
+
+.sodaback img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}

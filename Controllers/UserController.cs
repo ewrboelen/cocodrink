@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Cocodrinks.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace Cocodrinks.Controllers
 {
@@ -16,6 +17,14 @@ namespace Cocodrinks.Controllers
         public UserController(CocodrinksContext context)
         {
             _context = context;
+        }
+
+        public IActionResult Logout()
+        {
+            HttpContext.Session.SetString("username","");
+            HttpContext.Session.Clear();
+            return this.Redirect("/Home/Login");
+            //return View();
         }
 
         // GET: User
