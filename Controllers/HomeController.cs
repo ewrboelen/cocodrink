@@ -4,10 +4,12 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Cocodrinks.Models;
 using System.Security.Cryptography;
 using Microsoft.AspNetCore.Http; 
 using Microsoft.EntityFrameworkCore;
+
+using Cocodrinks.Models;
+using Cocodrinks.Utilities;
 
 namespace Cocodrinks.Controllers
 {
@@ -40,17 +42,18 @@ namespace Cocodrinks.Controllers
             if(Request.Method == "POST"){
                 Console.WriteLine(" got form post "+Request.Form["Name"].ToString());
                 if(usercred.Name != null && usercred.Name.Length > 0){
-                    String lname=""+usercred.Name;
-                    var found = _context.User.FromSql("SELECT * FROM user WHERE name='"+lname+"'").ToList();
-                    if(found.Count == 0){
+                    
+                    var found = DbHelper.finduser(_context,usercred.Name);
+                    if(found == true){
+                        Console.WriteLine("{0} logged in", usercred.Name);
+                    }else{
                         User user = new User();
                         user.Name = usercred.Name;
                         user.Password = usercred.Password;
 
                         _context.User.Add(user);
+                        _context.SaveChanges();
                         Console.WriteLine("{0} created ", user.Name);
-                    }else{
-                        Console.WriteLine("{0} logged in", usercred.Name);
                     }
                     HttpContext.Session.SetString("username", usercred.Name);
                     return this.Redirect("Index");
