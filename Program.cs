@@ -15,14 +15,15 @@ namespace Cocodrinks
 {
     public class Program
     {
+        //private readonly ILogger _logger;
         public static void Main(string[] args)
         {
-             var host = CreateWebHostBuilder(args).Build();
+            var host = CreateWebHostBuilder(args).Build();
 
             using (var scope = host.Services.CreateScope())
             {
                 var services = scope.ServiceProvider;
-
+                var logger = services.GetRequiredService<ILogger<Program>>();
                 try
                 {
                     var context = services.GetRequiredService<CocodrinksContext>();
@@ -31,11 +32,12 @@ namespace Cocodrinks
                 }
                 catch (Exception ex)
                 {
-                    var logger = services.GetRequiredService<ILogger<Program>>();
+                    
                     logger.LogError(ex, "An error occurred seeding the DB.");
                 }
+                logger.LogInformation("Seeded the database.");
             }
-
+            
             host.Run();
         }
 

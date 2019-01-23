@@ -40,6 +40,12 @@ namespace Cocodrinks.Controllers
             return View();
         }
 
+        public IActionResult Login()
+        {
+            return View(new LoginViewModel());
+        }
+
+        [HttpPost]
         public IActionResult Login(LoginViewModel usercred)
         {
             if(Request.Method == "POST"){
@@ -63,7 +69,7 @@ namespace Cocodrinks.Controllers
                     return this.Redirect("Index");
                 }
             }
-            return View();
+            return View(usercred);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

@@ -46,10 +46,15 @@ namespace Cocodrinks.Models
         public string Name { get; set; }
         public string Password { get; set; }
 
+        [EmailAddress]
+        public string Email { get; set; }
+
         [DataType(DataType.Date)]
         public DateTime CreateDate { get; set; }
         
         public int Logincount { get; set; }
+
+        public int AccessLevel { get; set; }
     }
 
     public class Article
@@ -62,9 +67,21 @@ namespace Cocodrinks.Models
 
     public class Order
     {
+        public Order() 
+        {
+            this.Articles = new HashSet<Article>();
+        }
         public int Id { get; set; }
-        public string Comment { get; set; }       
+        public string BankAccount { get; set; }
+        public string Comment { get; set; }
+
+        [DataType(DataType.Date)]
+        public DateTime CreateDate { get; set; } 
+
+        [DataType(DataType.Date)]
+        public DateTime DeliveryDate { get; set; }     
         public User User { get; set; }
+        public int UserId { get; set; }
         public ICollection<Article> Articles { get; set; }
     }
 
@@ -115,16 +132,32 @@ namespace Cocodrinks.Models
                     {
                         Name = "red drink",
                         Description = "Romantic Drink",
-                        Imagelocation = "images/reddrink.jpg"
+                        Imagelocation = "images/pinksoda.png"
                     },
                     new Article
                     {
                         Name = "black drink",
-                        Description = "Romantic Comedy",
-                        Imagelocation = "images/reddrink.jpg"
+                        Description = "Dark drink",
+                        Imagelocation = "images/bluesoda.png"
                     }
 
                    
+                );
+                 context.Users.AddRange(
+                    new User
+                    {
+                        Name = "admin",
+                        Password = "admin",
+                        Email = "admin@admin.admin",
+                        AccessLevel = 0
+                    },
+                    new User
+                    {
+                        Name = "test",
+                        Password = "admin",
+                        Email = "test@test.test",
+                        AccessLevel = 10
+                    }
                 );
                 context.SaveChanges();
             }

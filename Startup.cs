@@ -33,15 +33,9 @@ namespace Cocodrinks
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-
-            String dblocation = "CocodrinksContextWindows"; // is in appsettings.json
-            String osNameAndVersion = System.Runtime.InteropServices.RuntimeInformation.OSDescription;
-            Console.WriteLine("OS: "+osNameAndVersion);
-            if(osNameAndVersion.StartsWith("Linux")){
-                dblocation = "CocodrinksContextLinux";
-            }
+            
             services.AddDbContext<CocodrinksContext>(options =>
-            options.UseSqlite(Configuration.GetConnectionString(dblocation)));
+            options.UseSqlite(Configuration.GetConnectionString(this.getContext())));
             
             services.AddMemoryCache(); //scalability
 
@@ -52,6 +46,16 @@ namespace Cocodrinks
             });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+        }
+
+        public string getContext(){
+            String dblocation = "CocodrinksContextWindows"; // is in appsettings.json
+            String osNameAndVersion = System.Runtime.InteropServices.RuntimeInformation.OSDescription;
+            Console.WriteLine("OS: "+osNameAndVersion);
+            if(osNameAndVersion.StartsWith("Linux")){
+                dblocation = "CocodrinksContextLinux";
+            }
+            return dblocation;
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

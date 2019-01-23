@@ -59,9 +59,15 @@ namespace Cocodrinks.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("BankAccount");
+
                     b.Property<string>("Comment");
 
-                    b.Property<int?>("UserId");
+                    b.Property<DateTime>("CreateDate");
+
+                    b.Property<DateTime>("DeliveryDate");
+
+                    b.Property<int>("UserId");
 
                     b.HasKey("Id");
 
@@ -75,7 +81,11 @@ namespace Cocodrinks.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<int>("AccessLevel");
+
                     b.Property<DateTime>("CreateDate");
+
+                    b.Property<string>("Email");
 
                     b.Property<int>("Logincount");
 
@@ -99,7 +109,8 @@ namespace Cocodrinks.Migrations
                 {
                     b.HasOne("Cocodrinks.Models.User", "User")
                         .WithMany()
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

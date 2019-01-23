@@ -31,8 +31,10 @@ namespace Cocodrinks.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     Name = table.Column<string>(nullable: true),
                     Password = table.Column<string>(nullable: true),
+                    Email = table.Column<string>(nullable: true),
                     CreateDate = table.Column<DateTime>(nullable: false),
-                    Logincount = table.Column<int>(nullable: false)
+                    Logincount = table.Column<int>(nullable: false),
+                    AccessLevel = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -45,8 +47,11 @@ namespace Cocodrinks.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
+                    BankAccount = table.Column<string>(nullable: true),
                     Comment = table.Column<string>(nullable: true),
-                    UserId = table.Column<int>(nullable: true)
+                    CreateDate = table.Column<DateTime>(nullable: false),
+                    DeliveryDate = table.Column<DateTime>(nullable: false),
+                    UserId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -56,7 +61,7 @@ namespace Cocodrinks.Migrations
                         column: x => x.UserId,
                         principalTable: "Users",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(

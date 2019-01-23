@@ -6,16 +6,20 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Cocodrinks.Models;
+using Microsoft.Extensions.Logging;
+using System.Web;
 
 namespace Cocodrinks.Controllers
 {
     public class OrdersController : Controller
     {
         private readonly CocodrinksContext _context;
+        private readonly ILogger<OrdersController> _logger;
 
-        public OrdersController(CocodrinksContext context)
+        public OrdersController(CocodrinksContext context, ILogger<OrdersController> logger)
         {
             _context = context;
+            _logger = logger;
         }
 
         // GET: Orders
@@ -53,15 +57,40 @@ namespace Cocodrinks.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Comment")] Order order)
+        public IActionResult Create([Bind("Id,Comment")] Order order)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(order);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                //_context.Add(order);
+                //await _context.SaveChangesAsync();
+                return Redirect("Checkout?Comment="+order.Comment); //nameof(Checkout)+
             }
             return View(order);
+        }
+
+        [HttpGet]
+        public IActionResult Checkout()//[Bind("Comment")] Order order)
+        {
+            Order order = new Order();
+            //order.Comment = Request.QueryString["Comment"];
+            string val = HttpContext.Request.ToString(); //Request.QueryString["product_id"];
+            _logger.LogInformation("-- step 2 "+Request.Query["Comment"]);
+            order.Comment = Request.Query["Comment"];
+            return View(order);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Checkout([Bind("Id,Comment,BankAccount")] Order order)
+        {
+           // if (ModelState.IsValid){
+                order.UserId = 1;
+                _context.Add(order);
+                await _context.SaveChangesAsync();
+                _logger.LogInformation("-- order created: "+order.Id);
+                return RedirectToAction(nameof(Index));
+           // }
+          //  return View(order);
         }
 
         // GET: Orders/Edit/5
