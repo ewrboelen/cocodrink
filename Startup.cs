@@ -12,6 +12,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Cocodrinks.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using NJsonSchema;
+using NSwag.AspNetCore;
 
 namespace Cocodrinks
 {
@@ -46,6 +48,7 @@ namespace Cocodrinks
             });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddSwaggerDocument();
         }
 
         public string getContext(){
@@ -76,6 +79,8 @@ namespace Cocodrinks
             app.UseStaticFiles();
             app.UseCookiePolicy();
             app.UseSession(); 
+            app.UseSwagger();
+            app.UseSwaggerUi3();
 
             app.UseMvc(routes =>
             {
@@ -83,6 +88,7 @@ namespace Cocodrinks
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+            
         }
     }
 }
