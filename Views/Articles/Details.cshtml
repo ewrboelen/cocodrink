@@ -29,8 +29,10 @@
             @Html.DisplayFor(model => model.Imagelocation)
         </dd>
     </dl>
+    <img class="preview" src="@Html.DisplayFor(model => model.Imagelocation)" />
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> 
+    <a asp-action="Upload" asp-route-id="@Model.Id">Upload image</a> |
     <a asp-action="Index">Back to List</a>
 </div>

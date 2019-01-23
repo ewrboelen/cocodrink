@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Http;
+using System.IO;
+using System.Threading;
 
 namespace Cocodrinks.Models
 {
@@ -22,6 +24,8 @@ namespace Cocodrinks.Models
         public DbSet<Cocodrinks.Models.User> Users { get; set; }
         public DbSet<Cocodrinks.Models.Article> Articles { get; set; }
         public DbSet<Cocodrinks.Models.Order> Orders { get; set; }
+
+        public DbSet<Cocodrinks.Models.OrderLine> OrderLines { get; set; }
         public DbSet<Cocodrinks.Models.Image> Images { get; set; }
     }
 
@@ -69,7 +73,7 @@ namespace Cocodrinks.Models
     {
         public Order() 
         {
-            this.Articles = new HashSet<Article>();
+            this.OrderLines = new HashSet<OrderLine>();
         }
         public int Id { get; set; }
         public string BankAccount { get; set; }
@@ -82,7 +86,19 @@ namespace Cocodrinks.Models
         public DateTime DeliveryDate { get; set; }     
         public User User { get; set; }
         public int UserId { get; set; }
-        public ICollection<Article> Articles { get; set; }
+        public ICollection<OrderLine> OrderLines { get; set; }
+    }
+
+    public class OrderLine{
+        public int Id { get; set; }
+        public int Quantity { get; set; }
+
+        public int OrderId { get; set; }
+
+        public Order Order{get; set; }
+
+        public int ArticleId { get; set; }
+        public Article Article{ get; set; }
     }
 
     public class FileUpload
@@ -132,13 +148,13 @@ namespace Cocodrinks.Models
                     {
                         Name = "red drink",
                         Description = "Romantic Drink",
-                        Imagelocation = "images/pinksoda.png"
+                        Imagelocation = "/media/pinksoda.png"
                     },
                     new Article
                     {
                         Name = "black drink",
                         Description = "Dark drink",
-                        Imagelocation = "images/bluesoda.png"
+                        Imagelocation = "/media/bluesoda.png"
                     }
 
                    

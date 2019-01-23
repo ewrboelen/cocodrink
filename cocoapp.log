@@ -1758,3 +1758,840 @@ FROM "Orders" AS "o"
 2019-01-23 15:54:09,713 [7] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.Api.OrderController.GetOrders (Cocodrinks) in 281.9355ms
 2019-01-23 15:54:09,713 [7] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.Api.OrderController.GetOrders (Cocodrinks)'
 2019-01-23 15:54:09,716 [7] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 345.3417ms 200 application/json; charset=utf-8
+2019-01-23 16:09:19,674 [12] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/  
+2019-01-23 16:09:19,729 [12] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.HomeController.Index (Cocodrinks)'
+2019-01-23 16:09:19,739 [12] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Home"}. Executing action Cocodrinks.Controllers.HomeController.Index (Cocodrinks)
+2019-01-23 16:09:19,750 [12] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.HomeController.Index (Cocodrinks) - Validation state: Valid
+2019-01-23 16:09:19,752 [12] INFO Microsoft.AspNetCore.Session.DistributedSession - Accessing expired session, Key:13a0b0f7-295c-a15d-1f5b-ba249f45136d
+2019-01-23 16:09:19,754 [12] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.HomeController.Index (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.RedirectResult in 1.5494ms.
+2019-01-23 16:09:19,758 [12] INFO Microsoft.AspNetCore.Mvc.Infrastructure.RedirectResultExecutor - Executing RedirectResult, redirecting to Home/Login.
+2019-01-23 16:09:19,760 [12] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.HomeController.Index (Cocodrinks) in 19.3674ms
+2019-01-23 16:09:19,761 [12] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.HomeController.Index (Cocodrinks)'
+2019-01-23 16:09:19,769 [12] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 98.5508ms 302 
+2019-01-23 16:09:19,772 [7] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/Home/Login  
+2019-01-23 16:09:19,778 [7] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.HomeController.Login (Cocodrinks)'
+2019-01-23 16:09:19,779 [7] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Login", controller = "Home"}. Executing action Cocodrinks.Controllers.HomeController.Login (Cocodrinks)
+2019-01-23 16:09:19,780 [7] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.HomeController.Login (Cocodrinks) - Validation state: Valid
+2019-01-23 16:09:19,780 [7] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.HomeController.Login (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.3093ms.
+2019-01-23 16:09:19,795 [7] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Login.
+2019-01-23 16:09:19,926 [7] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Login executed in 143.427ms.
+2019-01-23 16:09:19,927 [7] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.HomeController.Login (Cocodrinks) in 147.058ms
+2019-01-23 16:09:19,927 [7] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.HomeController.Login (Cocodrinks)'
+2019-01-23 16:09:19,930 [7] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 158.7423ms 200 text/html; charset=utf-8
+2019-01-23 16:09:23,303 [10] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST https://localhost:5001/Home/Login application/x-www-form-urlencoded 202
+2019-01-23 16:09:23,306 [10] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.HomeController.Login (Cocodrinks)'
+2019-01-23 16:09:23,319 [10] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Login", controller = "Home"}. Executing action Cocodrinks.Controllers.HomeController.Login (Cocodrinks)
+2019-01-23 16:09:23,350 [10] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.HomeController.Login (Cocodrinks) with arguments (Cocodrinks.Models.LoginViewModel) - Validation state: Invalid
+2019-01-23 16:09:23,351 [10] WARN Cocodrinks.Controllers.HomeController -  got form post hihi
+2019-01-23 16:09:23,352 [10] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 2.2.1-servicing-10028 initialized 'CocodrinksContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2019-01-23 16:09:23,362 [10] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+2019-01-23 16:09:23,363 [10] INFO Cocodrinks.Utilities.DbHelper - no users found
+2019-01-23 16:09:23,367 [10] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?', @p4='?' (Size = 4), @p5='?'], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Users" ("AccessLevel", "CreateDate", "Email", "Logincount", "Name", "Password")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT "Id"
+FROM "Users"
+WHERE changes() = 1 AND "Id" = last_insert_rowid();
+2019-01-23 16:09:23,380 [10] INFO Microsoft.AspNetCore.Session.DistributedSession - Accessing expired session, Key:13a0b0f7-295c-a15d-1f5b-ba249f45136d
+2019-01-23 16:09:23,380 [10] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.HomeController.Login (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.RedirectResult in 30.4959ms.
+2019-01-23 16:09:23,381 [10] INFO Microsoft.AspNetCore.Mvc.Infrastructure.RedirectResultExecutor - Executing RedirectResult, redirecting to Index.
+2019-01-23 16:09:23,381 [10] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.HomeController.Login (Cocodrinks) in 61.5367ms
+2019-01-23 16:09:23,381 [10] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.HomeController.Login (Cocodrinks)'
+2019-01-23 16:09:23,381 [10] INFO Microsoft.AspNetCore.Session.DistributedSession - Session started; Key:13a0b0f7-295c-a15d-1f5b-ba249f45136d, Id:4c9b0e3f-532e-1da7-3f5d-7395e1c8c838
+2019-01-23 16:09:23,383 [10] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 80.0038ms 302 
+2019-01-23 16:09:23,385 [7] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/Home/Index  
+2019-01-23 16:09:23,385 [7] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.HomeController.Index (Cocodrinks)'
+2019-01-23 16:09:23,385 [7] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Home"}. Executing action Cocodrinks.Controllers.HomeController.Index (Cocodrinks)
+2019-01-23 16:09:23,386 [7] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.HomeController.Index (Cocodrinks) - Validation state: Valid
+2019-01-23 16:09:23,386 [7] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.HomeController.Index (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.186ms.
+2019-01-23 16:09:23,388 [7] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Index.
+2019-01-23 16:09:23,422 [7] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Index executed in 35.9055ms.
+2019-01-23 16:09:23,422 [7] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.HomeController.Index (Cocodrinks) in 36.8161ms
+2019-01-23 16:09:23,422 [7] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.HomeController.Index (Cocodrinks)'
+2019-01-23 16:09:23,422 [7] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 37.767ms 200 text/html; charset=utf-8
+2019-01-23 16:09:26,070 [15] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/Articles  
+2019-01-23 16:09:26,070 [15] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks)'
+2019-01-23 16:09:26,076 [15] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Articles"}. Executing action Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks)
+2019-01-23 16:09:26,076 [15] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks) - Validation state: Valid
+2019-01-23 16:09:26,092 [15] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 2.2.1-servicing-10028 initialized 'CocodrinksContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2019-01-23 16:09:26,194 [15] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+2019-01-23 16:09:26,210 [15] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."Description", "a"."Imagelocation", "a"."Name"
+FROM "Articles" AS "a"
+2019-01-23 16:09:26,229 [15] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.ViewResult in 152.464ms.
+2019-01-23 16:09:26,233 [15] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Index.
+2019-01-23 16:09:26,259 [15] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Index executed in 29.5158ms.
+2019-01-23 16:09:26,259 [15] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks) in 183.2456ms
+2019-01-23 16:09:26,259 [15] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks)'
+2019-01-23 16:09:26,260 [15] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 189.3193ms 200 text/html; charset=utf-8
+2019-01-23 16:09:26,273 [9] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/images/pinksoda.png  
+2019-01-23 16:09:26,273 [15] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/images/bluesoda.png  
+2019-01-23 16:09:26,275 [9] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 2.3889ms 404 
+2019-01-23 16:09:26,275 [15] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.8105ms 404 
+2019-01-23 16:09:56,144 [16] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/media/pinksoda.png  
+2019-01-23 16:09:56,164 [19] INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/media/pinksoda.png'. Physical path: 'C:\Cocodrinks\wwwroot\media\pinksoda.png'
+2019-01-23 16:09:56,166 [19] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 21.4755ms 200 image/png
+2019-01-23 16:10:02,425 [19] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/  
+2019-01-23 16:10:02,426 [19] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.HomeController.Index (Cocodrinks)'
+2019-01-23 16:10:02,426 [19] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Home"}. Executing action Cocodrinks.Controllers.HomeController.Index (Cocodrinks)
+2019-01-23 16:10:02,426 [19] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.HomeController.Index (Cocodrinks) - Validation state: Valid
+2019-01-23 16:10:02,426 [19] INFO Microsoft.AspNetCore.Session.DistributedSession - Accessing expired session, Key:13a0b0f7-295c-a15d-1f5b-ba249f45136d
+2019-01-23 16:10:02,426 [19] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.HomeController.Index (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.RedirectResult in 0.3358ms.
+2019-01-23 16:10:02,427 [19] INFO Microsoft.AspNetCore.Mvc.Infrastructure.RedirectResultExecutor - Executing RedirectResult, redirecting to Home/Login.
+2019-01-23 16:10:02,427 [19] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.HomeController.Index (Cocodrinks) in 0.9232ms
+2019-01-23 16:10:02,427 [19] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.HomeController.Index (Cocodrinks)'
+2019-01-23 16:10:02,427 [19] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.7358ms 302 
+2019-01-23 16:10:02,430 [17] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/Home/Login  
+2019-01-23 16:10:02,431 [17] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.HomeController.Login (Cocodrinks)'
+2019-01-23 16:10:02,437 [17] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Login", controller = "Home"}. Executing action Cocodrinks.Controllers.HomeController.Login (Cocodrinks)
+2019-01-23 16:10:02,437 [17] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.HomeController.Login (Cocodrinks) - Validation state: Valid
+2019-01-23 16:10:02,438 [17] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.HomeController.Login (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0181ms.
+2019-01-23 16:10:02,438 [17] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Login.
+2019-01-23 16:10:02,440 [17] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Login executed in 2.1997ms.
+2019-01-23 16:10:02,440 [17] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.HomeController.Login (Cocodrinks) in 2.8191ms
+2019-01-23 16:10:02,440 [17] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.HomeController.Login (Cocodrinks)'
+2019-01-23 16:10:02,440 [17] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 10.7065ms 200 text/html; charset=utf-8
+2019-01-23 16:10:02,973 [18] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/Home/Login  
+2019-01-23 16:10:02,973 [18] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.HomeController.Login (Cocodrinks)'
+2019-01-23 16:10:02,973 [18] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Login", controller = "Home"}. Executing action Cocodrinks.Controllers.HomeController.Login (Cocodrinks)
+2019-01-23 16:10:02,974 [18] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.HomeController.Login (Cocodrinks) - Validation state: Valid
+2019-01-23 16:10:02,974 [18] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.HomeController.Login (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0098ms.
+2019-01-23 16:10:02,974 [18] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Login.
+2019-01-23 16:10:02,975 [18] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Login executed in 1.1816ms.
+2019-01-23 16:10:02,975 [18] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.HomeController.Login (Cocodrinks) in 1.8157ms
+2019-01-23 16:10:02,976 [18] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.HomeController.Login (Cocodrinks)'
+2019-01-23 16:10:02,976 [18] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 3.0668ms 200 text/html; charset=utf-8
+2019-01-23 16:11:01,746 [22] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST https://localhost:5001/Home/Login application/x-www-form-urlencoded 202
+2019-01-23 16:11:01,746 [22] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.HomeController.Login (Cocodrinks)'
+2019-01-23 16:11:01,746 [22] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Login", controller = "Home"}. Executing action Cocodrinks.Controllers.HomeController.Login (Cocodrinks)
+2019-01-23 16:11:01,747 [22] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.HomeController.Login (Cocodrinks) with arguments (Cocodrinks.Models.LoginViewModel) - Validation state: Invalid
+2019-01-23 16:11:01,748 [22] WARN Cocodrinks.Controllers.HomeController -  got form post hihi
+2019-01-23 16:11:01,748 [22] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 2.2.1-servicing-10028 initialized 'CocodrinksContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2019-01-23 16:11:01,749 [22] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+2019-01-23 16:11:01,749 [22] INFO Cocodrinks.Utilities.DbHelper - found userid 3
+2019-01-23 16:11:01,750 [22] INFO Microsoft.AspNetCore.Session.DistributedSession - Accessing expired session, Key:13a0b0f7-295c-a15d-1f5b-ba249f45136d
+2019-01-23 16:11:01,750 [22] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.HomeController.Login (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.RedirectResult in 2.3348ms.
+2019-01-23 16:11:01,750 [22] INFO Microsoft.AspNetCore.Mvc.Infrastructure.RedirectResultExecutor - Executing RedirectResult, redirecting to Index.
+2019-01-23 16:11:01,750 [22] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.HomeController.Login (Cocodrinks) in 3.6618ms
+2019-01-23 16:11:01,750 [22] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.HomeController.Login (Cocodrinks)'
+2019-01-23 16:11:01,750 [22] INFO Microsoft.AspNetCore.Session.DistributedSession - Session started; Key:13a0b0f7-295c-a15d-1f5b-ba249f45136d, Id:fc020052-72b6-f822-f06f-bd561a863da9
+2019-01-23 16:11:01,751 [22] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 4.9513ms 302 
+2019-01-23 16:11:01,755 [25] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/Home/Index  
+2019-01-23 16:11:01,759 [25] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.HomeController.Index (Cocodrinks)'
+2019-01-23 16:11:01,759 [25] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Home"}. Executing action Cocodrinks.Controllers.HomeController.Index (Cocodrinks)
+2019-01-23 16:11:01,759 [25] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.HomeController.Index (Cocodrinks) - Validation state: Valid
+2019-01-23 16:11:01,760 [25] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.HomeController.Index (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.2188ms.
+2019-01-23 16:11:01,760 [25] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Index.
+2019-01-23 16:11:01,761 [25] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Index executed in 0.9663ms.
+2019-01-23 16:11:01,761 [25] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.HomeController.Index (Cocodrinks) in 2.1281ms
+2019-01-23 16:11:01,761 [25] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.HomeController.Index (Cocodrinks)'
+2019-01-23 16:11:01,761 [25] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 6.1645ms 200 text/html; charset=utf-8
+2019-01-23 16:11:03,402 [18] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/Orders/Create  
+2019-01-23 16:11:03,403 [18] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.OrdersController.Create (Cocodrinks)'
+2019-01-23 16:11:03,404 [18] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Create", controller = "Orders"}. Executing action Cocodrinks.Controllers.OrdersController.Create (Cocodrinks)
+2019-01-23 16:11:03,405 [18] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.OrdersController.Create (Cocodrinks) - Validation state: Valid
+2019-01-23 16:11:03,405 [18] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.OrdersController.Create (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0936ms.
+2019-01-23 16:11:03,407 [18] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Create.
+2019-01-23 16:11:03,430 [18] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Create executed in 24.8221ms.
+2019-01-23 16:11:03,430 [18] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.OrdersController.Create (Cocodrinks) in 25.7647ms
+2019-01-23 16:11:03,430 [18] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.OrdersController.Create (Cocodrinks)'
+2019-01-23 16:11:03,430 [18] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 27.9735ms 200 text/html; charset=utf-8
+2019-01-23 16:11:08,408 [22] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST https://localhost:5001/Orders/Create application/x-www-form-urlencoded 195
+2019-01-23 16:11:08,410 [22] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.OrdersController.Create (Cocodrinks)'
+2019-01-23 16:11:08,417 [22] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Create", controller = "Orders"}. Executing action Cocodrinks.Controllers.OrdersController.Create (Cocodrinks)
+2019-01-23 16:11:08,425 [22] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.OrdersController.Create (Cocodrinks) with arguments (Cocodrinks.Models.Order) - Validation state: Valid
+2019-01-23 16:11:08,426 [22] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.OrdersController.Create (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.RedirectResult in 0.312ms.
+2019-01-23 16:11:08,427 [22] INFO Microsoft.AspNetCore.Mvc.Infrastructure.RedirectResultExecutor - Executing RedirectResult, redirecting to Checkout?Comment=jaja.
+2019-01-23 16:11:08,427 [22] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.OrdersController.Create (Cocodrinks) in 8.9319ms
+2019-01-23 16:11:08,428 [22] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.OrdersController.Create (Cocodrinks)'
+2019-01-23 16:11:08,434 [22] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 26.0495ms 302 
+2019-01-23 16:11:08,437 [22] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/Orders/Checkout?Comment=jaja  
+2019-01-23 16:11:08,437 [22] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.OrdersController.Checkout (Cocodrinks)'
+2019-01-23 16:11:08,439 [22] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Checkout", controller = "Orders"}. Executing action Cocodrinks.Controllers.OrdersController.Checkout (Cocodrinks)
+2019-01-23 16:11:08,439 [22] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.OrdersController.Checkout (Cocodrinks) - Validation state: Valid
+2019-01-23 16:11:08,440 [22] INFO Cocodrinks.Controllers.OrdersController - -- step 2 jaja
+2019-01-23 16:11:08,440 [22] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.OrdersController.Checkout (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.6403ms.
+2019-01-23 16:11:08,442 [22] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Checkout.
+2019-01-23 16:11:08,464 [22] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Checkout executed in 24.4373ms.
+2019-01-23 16:11:08,465 [22] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.OrdersController.Checkout (Cocodrinks) in 25.9373ms
+2019-01-23 16:11:08,465 [22] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.OrdersController.Checkout (Cocodrinks)'
+2019-01-23 16:11:08,465 [22] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 28.3282ms 200 text/html; charset=utf-8
+2019-01-23 16:11:11,637 [25] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST https://localhost:5001/Orders/Checkout application/x-www-form-urlencoded 212
+2019-01-23 16:11:11,638 [25] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.OrdersController.Checkout (Cocodrinks)'
+2019-01-23 16:11:11,641 [25] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Checkout", controller = "Orders"}. Executing action Cocodrinks.Controllers.OrdersController.Checkout (Cocodrinks)
+2019-01-23 16:11:11,643 [25] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.OrdersController.Checkout (Cocodrinks) with arguments (Cocodrinks.Models.Order) - Validation state: Valid
+2019-01-23 16:11:11,650 [25] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 2.2.1-servicing-10028 initialized 'CocodrinksContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2019-01-23 16:11:11,692 [25] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+2019-01-23 16:11:11,700 [25] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[@p0='?' (Size = 4), @p1='?' (Size = 4), @p2='?', @p3='?', @p4='?'], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Orders" ("BankAccount", "Comment", "CreateDate", "DeliveryDate", "UserId")
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT "Id"
+FROM "Orders"
+WHERE changes() = 1 AND "Id" = last_insert_rowid();
+2019-01-23 16:11:11,729 [25] INFO Cocodrinks.Controllers.OrdersController - -- order created: 1
+2019-01-23 16:11:11,730 [25] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.OrdersController.Checkout (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.RedirectToActionResult in 81.4351ms.
+2019-01-23 16:11:11,730 [25] INFO Microsoft.AspNetCore.Mvc.RedirectToActionResult - Executing RedirectResult, redirecting to /Orders.
+2019-01-23 16:11:11,731 [25] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.OrdersController.Checkout (Cocodrinks) in 88.982ms
+2019-01-23 16:11:11,731 [25] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.OrdersController.Checkout (Cocodrinks)'
+2019-01-23 16:11:11,731 [25] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 93.5809ms 302 
+2019-01-23 16:11:11,733 [25] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/Orders  
+2019-01-23 16:11:11,733 [25] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.OrdersController.Index (Cocodrinks)'
+2019-01-23 16:11:11,738 [25] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Orders"}. Executing action Cocodrinks.Controllers.OrdersController.Index (Cocodrinks)
+2019-01-23 16:11:11,738 [25] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.OrdersController.Index (Cocodrinks) - Validation state: Valid
+2019-01-23 16:11:11,740 [25] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 2.2.1-servicing-10028 initialized 'CocodrinksContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2019-01-23 16:11:11,756 [25] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+2019-01-23 16:11:11,757 [25] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "o"."Id", "o"."BankAccount", "o"."Comment", "o"."CreateDate", "o"."DeliveryDate", "o"."UserId"
+FROM "Orders" AS "o"
+2019-01-23 16:11:11,759 [25] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.OrdersController.Index (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.ViewResult in 20.1983ms.
+2019-01-23 16:11:11,761 [25] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Index.
+2019-01-23 16:11:11,775 [25] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Index executed in 16.088ms.
+2019-01-23 16:11:11,781 [25] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.OrdersController.Index (Cocodrinks) in 42.3754ms
+2019-01-23 16:11:11,781 [25] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.OrdersController.Index (Cocodrinks)'
+2019-01-23 16:11:11,781 [25] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 47.8755ms 200 text/html; charset=utf-8
+2019-01-23 16:11:13,826 [25] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/Orders/Details/1  
+2019-01-23 16:11:13,827 [25] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.OrdersController.Details (Cocodrinks)'
+2019-01-23 16:11:13,830 [25] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Details", controller = "Orders"}. Executing action Cocodrinks.Controllers.OrdersController.Details (Cocodrinks)
+2019-01-23 16:11:13,832 [25] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.OrdersController.Details (Cocodrinks) with arguments (1) - Validation state: Valid
+2019-01-23 16:11:13,841 [25] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 2.2.1-servicing-10028 initialized 'CocodrinksContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2019-01-23 16:11:13,946 [25] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+2019-01-23 16:11:13,961 [25] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT "m"."Id", "m"."BankAccount", "m"."Comment", "m"."CreateDate", "m"."DeliveryDate", "m"."UserId"
+FROM "Orders" AS "m"
+WHERE "m"."Id" = @__id_0
+LIMIT 1
+2019-01-23 16:11:13,968 [25] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.OrdersController.Details (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.ViewResult in 130.0222ms.
+2019-01-23 16:11:13,971 [25] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Details.
+2019-01-23 16:11:13,982 [25] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Details executed in 13.4751ms.
+2019-01-23 16:11:13,982 [25] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.OrdersController.Details (Cocodrinks) in 150.8719ms
+2019-01-23 16:11:13,982 [25] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.OrdersController.Details (Cocodrinks)'
+2019-01-23 16:11:13,982 [25] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 156.0682ms 200 text/html; charset=utf-8
+2019-01-23 16:11:16,167 [22] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/Orders  
+2019-01-23 16:11:16,168 [22] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.OrdersController.Index (Cocodrinks)'
+2019-01-23 16:11:16,168 [22] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Orders"}. Executing action Cocodrinks.Controllers.OrdersController.Index (Cocodrinks)
+2019-01-23 16:11:16,168 [22] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.OrdersController.Index (Cocodrinks) - Validation state: Valid
+2019-01-23 16:11:16,169 [22] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 2.2.1-servicing-10028 initialized 'CocodrinksContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2019-01-23 16:11:16,170 [22] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+2019-01-23 16:11:16,171 [22] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "o"."Id", "o"."BankAccount", "o"."Comment", "o"."CreateDate", "o"."DeliveryDate", "o"."UserId"
+FROM "Orders" AS "o"
+2019-01-23 16:11:16,171 [22] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.OrdersController.Index (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.ViewResult in 2.9202ms.
+2019-01-23 16:11:16,171 [22] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Index.
+2019-01-23 16:11:16,173 [22] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Index executed in 1.8504ms.
+2019-01-23 16:11:16,174 [22] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.OrdersController.Index (Cocodrinks) in 5.4771ms
+2019-01-23 16:11:16,174 [22] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.OrdersController.Index (Cocodrinks)'
+2019-01-23 16:11:16,174 [22] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 6.6528ms 200 text/html; charset=utf-8
+2019-01-23 16:32:34,325 [13] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/Articles  
+2019-01-23 16:32:34,380 [13] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks)'
+2019-01-23 16:32:34,393 [13] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Articles"}. Executing action Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks)
+2019-01-23 16:32:34,403 [13] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks) - Validation state: Valid
+2019-01-23 16:32:34,405 [13] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 2.2.1-servicing-10028 initialized 'CocodrinksContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2019-01-23 16:32:34,460 [13] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+2019-01-23 16:32:34,469 [13] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."Description", "a"."Imagelocation", "a"."Name"
+FROM "Articles" AS "a"
+2019-01-23 16:32:34,524 [13] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.ViewResult in 119.559ms.
+2019-01-23 16:32:34,540 [13] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Index.
+2019-01-23 16:32:34,663 [13] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Index executed in 133.249ms.
+2019-01-23 16:32:34,663 [13] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks) in 270.3219ms
+2019-01-23 16:32:34,664 [13] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks)'
+2019-01-23 16:32:34,671 [13] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 348.3378ms 200 text/html; charset=utf-8
+2019-01-23 16:32:34,678 [10] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/images/pinksoda.png  
+2019-01-23 16:32:34,678 [6] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/images/bluesoda.png  
+2019-01-23 16:32:34,683 [6] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 5.1436ms 404 
+2019-01-23 16:32:34,683 [10] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 5.1508ms 404 
+2019-01-23 16:32:40,663 [12] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/Articles/Upload  
+2019-01-23 16:32:40,663 [12] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)'
+2019-01-23 16:32:40,664 [12] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Upload", controller = "Articles"}. Executing action Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)
+2019-01-23 16:32:40,665 [12] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks) - Validation state: Valid
+2019-01-23 16:32:40,665 [12] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.143ms.
+2019-01-23 16:32:40,667 [12] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Upload.
+2019-01-23 16:32:40,679 [12] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Upload executed in 14.1333ms.
+2019-01-23 16:32:40,680 [12] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks) in 15.0968ms
+2019-01-23 16:32:40,680 [12] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)'
+2019-01-23 16:32:40,680 [12] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 17.3712ms 200 text/html; charset=utf-8
+2019-01-23 16:33:03,460 [15] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST https://localhost:5001/Articles/Upload multipart/form-data; boundary=----WebKitFormBoundaryXDYFdOYGtBKS29zA 33238
+2019-01-23 16:33:03,462 [15] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)'
+2019-01-23 16:33:03,485 [15] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Upload", controller = "Articles"}. Executing action Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)
+2019-01-23 16:33:03,550 [15] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks) with arguments (System.Collections.Generic.List`1[Cocodrinks.Models.IFormFile]) - Validation state: Valid
+2019-01-23 16:33:03,554 [15] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 3.3058ms.
+2019-01-23 16:33:03,559 [15] INFO Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2019-01-23 16:33:03,619 [15] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks) in 134.1241ms
+2019-01-23 16:33:03,620 [15] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)'
+2019-01-23 16:33:03,620 [15] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 160.2657ms 200 application/json; charset=utf-8
+2019-01-23 16:46:33,097 [7] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/Articles/  
+2019-01-23 16:46:33,153 [7] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks)'
+2019-01-23 16:46:33,165 [7] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Articles"}. Executing action Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks)
+2019-01-23 16:46:33,177 [7] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks) - Validation state: Valid
+2019-01-23 16:46:33,181 [7] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 2.2.1-servicing-10028 initialized 'CocodrinksContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2019-01-23 16:46:33,240 [7] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+2019-01-23 16:46:33,249 [7] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."Description", "a"."Imagelocation", "a"."Name"
+FROM "Articles" AS "a"
+2019-01-23 16:46:33,301 [7] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.ViewResult in 122.3351ms.
+2019-01-23 16:46:33,316 [7] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Index.
+2019-01-23 16:46:33,437 [7] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Index executed in 129.9345ms.
+2019-01-23 16:46:33,437 [7] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks) in 271.703ms
+2019-01-23 16:46:33,438 [7] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks)'
+2019-01-23 16:46:33,445 [7] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 349.9904ms 200 text/html; charset=utf-8
+2019-01-23 16:46:33,452 [9] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/Articles/images/bluesoda.png  
+2019-01-23 16:46:33,453 [7] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/css/site.css  
+2019-01-23 16:46:33,453 [13] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/Articles/images/pinksoda.png  
+2019-01-23 16:46:33,458 [13] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 4.8071ms 404 
+2019-01-23 16:46:33,458 [9] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 5.8816ms 404 
+2019-01-23 16:46:33,465 [7] INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware - The file /css/site.css was not modified
+2019-01-23 16:46:33,467 [7] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 14.0357ms 304 text/css
+2019-01-23 16:46:39,233 [7] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/Articles/Upload  
+2019-01-23 16:46:39,235 [7] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)'
+2019-01-23 16:46:39,237 [7] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Upload", controller = "Articles"}. Executing action Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)
+2019-01-23 16:46:39,237 [7] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks) - Validation state: Valid
+2019-01-23 16:46:39,238 [7] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.2196ms.
+2019-01-23 16:46:39,240 [7] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Upload.
+2019-01-23 16:46:39,253 [7] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Upload executed in 14.7413ms.
+2019-01-23 16:46:39,253 [7] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks) in 16.3883ms
+2019-01-23 16:46:39,253 [7] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)'
+2019-01-23 16:46:39,255 [7] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 21.5588ms 200 text/html; charset=utf-8
+2019-01-23 16:46:52,960 [7] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST https://localhost:5001/Articles/Upload multipart/form-data; boundary=----WebKitFormBoundaryezRhIwW0rPNi4Ay9 57076
+2019-01-23 16:46:52,961 [7] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)'
+2019-01-23 16:46:52,979 [7] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Upload", controller = "Articles"}. Executing action Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)
+2019-01-23 16:46:53,020 [7] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks) with arguments (System.Collections.Generic.List`1[Cocodrinks.Models.IFormFile]) - Validation state: Valid
+2019-01-23 16:46:53,022 [7] INFO Cocodrinks.Controllers.ArticlesController - -- saving files done
+2019-01-23 16:46:53,026 [7] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 6.2004ms.
+2019-01-23 16:46:53,029 [7] INFO Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2019-01-23 16:46:53,065 [7] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks) in 85.671ms
+2019-01-23 16:46:53,066 [7] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)'
+2019-01-23 16:46:53,066 [7] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 105.5635ms 200 application/json; charset=utf-8
+2019-01-23 16:51:49,206 [11] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/Articles/Upload  
+2019-01-23 16:51:49,262 [11] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)'
+2019-01-23 16:51:49,271 [11] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Upload", controller = "Articles"}. Executing action Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)
+2019-01-23 16:51:49,280 [11] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks) - Validation state: Valid
+2019-01-23 16:51:49,282 [11] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.3057ms.
+2019-01-23 16:51:49,296 [11] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Upload.
+2019-01-23 16:51:49,407 [11] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Upload executed in 119.5815ms.
+2019-01-23 16:51:49,408 [11] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks) in 136.1946ms
+2019-01-23 16:51:49,408 [11] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)'
+2019-01-23 16:51:49,417 [11] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 213.4714ms 200 text/html; charset=utf-8
+2019-01-23 16:52:04,294 [7] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST https://localhost:5001/Articles/Upload multipart/form-data; boundary=----WebKitFormBoundaryoyMGYsGqbl1wv9AI 121319
+2019-01-23 16:52:04,298 [7] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)'
+2019-01-23 16:52:04,331 [7] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Upload", controller = "Articles"}. Executing action Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)
+2019-01-23 16:52:04,400 [7] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks) with arguments (System.Collections.Generic.List`1[Cocodrinks.Models.IFormFile]) - Validation state: Valid
+2019-01-23 16:52:04,405 [7] INFO Cocodrinks.Controllers.ArticlesController - ---- saving 0 files to C:\Cocodrinks\wwwroot/media/
+2019-01-23 16:52:04,405 [7] INFO Cocodrinks.Controllers.ArticlesController - -- saving files done
+2019-01-23 16:52:04,405 [7] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 5.0623ms.
+2019-01-23 16:52:04,410 [7] INFO Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2019-01-23 16:52:04,480 [7] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks) in 148.0615ms
+2019-01-23 16:52:04,480 [7] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)'
+2019-01-23 16:52:04,480 [7] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 186.1351ms 200 application/json; charset=utf-8
+2019-01-23 16:55:14,121 [16] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/Articles/Upload  
+2019-01-23 16:55:14,177 [16] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)'
+2019-01-23 16:55:14,187 [16] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Upload", controller = "Articles"}. Executing action Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)
+2019-01-23 16:55:14,197 [16] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks) - Validation state: Valid
+2019-01-23 16:55:14,199 [16] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.3361ms.
+2019-01-23 16:55:14,215 [16] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Upload.
+2019-01-23 16:55:14,328 [16] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Upload executed in 123.2125ms.
+2019-01-23 16:55:14,328 [16] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks) in 140.9188ms
+2019-01-23 16:55:14,329 [16] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)'
+2019-01-23 16:55:14,337 [16] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 218.6728ms 200 text/html; charset=utf-8
+2019-01-23 16:55:20,283 [14] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST https://localhost:5001/Articles/Upload multipart/form-data; boundary=----WebKitFormBoundary1aBY013veTWneTy5 113536
+2019-01-23 16:55:20,287 [14] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)'
+2019-01-23 16:55:20,303 [14] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Upload", controller = "Articles"}. Executing action Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)
+2019-01-23 16:55:20,392 [19] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks) with arguments (System.Collections.Generic.List`1[Microsoft.AspNetCore.Http.IFormFile]) - Validation state: Valid
+2019-01-23 16:55:20,398 [19] INFO Cocodrinks.Controllers.ArticlesController - ---- saving 1 files to C:\Cocodrinks\wwwroot\media\
+2019-01-23 16:55:20,403 [19] INFO Cocodrinks.Controllers.ArticlesController - -- saving file to C:\Cocodrinks\wwwroot\media\dsp_change1c.PNG
+2019-01-23 16:55:20,411 [16] INFO Cocodrinks.Controllers.ArticlesController - -- saving files done
+2019-01-23 16:55:20,417 [16] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 23.4575ms.
+2019-01-23 16:55:20,425 [19] INFO Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2019-01-23 16:55:20,491 [19] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks) in 183.7039ms
+2019-01-23 16:55:20,492 [19] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)'
+2019-01-23 16:55:20,501 [19] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 217.499ms 200 application/json; charset=utf-8
+2019-01-23 17:08:06,726 [34] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/Articles/Upload  
+2019-01-23 17:08:06,726 [34] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)'
+2019-01-23 17:08:06,727 [34] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Upload", controller = "Articles"}. Executing action Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)
+2019-01-23 17:08:06,727 [34] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks) - Validation state: Valid
+2019-01-23 17:08:06,727 [34] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0414ms.
+2019-01-23 17:08:07,853 [34] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Upload.
+2019-01-23 17:08:07,860 [34] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Upload executed in 1132.3202ms.
+2019-01-23 17:08:07,860 [34] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks) in 1133.319ms
+2019-01-23 17:08:07,860 [34] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)'
+2019-01-23 17:08:07,861 [34] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1134.8976ms 200 text/html; charset=utf-8
+2019-01-23 17:08:10,403 [39] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/Articles/Upload  
+2019-01-23 17:08:10,403 [39] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)'
+2019-01-23 17:08:10,404 [39] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Upload", controller = "Articles"}. Executing action Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)
+2019-01-23 17:08:10,405 [39] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks) - Validation state: Valid
+2019-01-23 17:08:10,405 [39] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0229ms.
+2019-01-23 17:08:10,405 [39] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Upload.
+2019-01-23 17:08:10,408 [39] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Upload executed in 2.4035ms.
+2019-01-23 17:08:10,408 [39] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks) in 4.141ms
+2019-01-23 17:08:10,408 [39] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)'
+2019-01-23 17:08:10,409 [39] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 6.4817ms 200 text/html; charset=utf-8
+2019-01-23 17:08:10,430 [39] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/lib/bootstrap/dist/css/bootstrap.css  
+2019-01-23 17:08:10,431 [36] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/css/site.css  
+2019-01-23 17:08:10,436 [37] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery/dist/jquery.js  
+2019-01-23 17:08:10,436 [43] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-01-23 17:08:10,437 [42] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0  
+2019-01-23 17:08:10,443 [42] INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/js/site.js'. Physical path: 'C:\Cocodrinks\wwwroot\js\site.js'
+2019-01-23 17:08:10,443 [42] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 6.7575ms 200 application/javascript
+2019-01-23 17:08:10,464 [37] INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/css/site.css'. Physical path: 'C:\Cocodrinks\wwwroot\css\site.css'
+2019-01-23 17:08:10,464 [34] INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Cocodrinks\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+2019-01-23 17:08:10,465 [37] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 34.0768ms 200 text/css
+2019-01-23 17:08:10,465 [34] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 34.5232ms 200 text/css
+2019-01-23 17:08:10,472 [34] INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Cocodrinks\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js'
+2019-01-23 17:08:10,473 [34] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 36.8181ms 200 application/javascript
+2019-01-23 17:08:10,473 [43] INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Cocodrinks\wwwroot\lib\jquery\dist\jquery.js'
+2019-01-23 17:08:10,473 [43] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 37.2949ms 200 application/javascript
+2019-01-23 17:08:10,504 [42] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/favicon.ico  
+2019-01-23 17:08:10,504 [42] INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Cocodrinks\wwwroot\favicon.ico'
+2019-01-23 17:08:10,505 [42] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.7881ms 200 image/x-icon
+2019-01-23 17:08:48,402 [42] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST https://localhost:5001/Articles/Upload multipart/form-data; boundary=----WebKitFormBoundaryju0K0V2Lf3Vp9WQH 47359
+2019-01-23 17:08:48,402 [42] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)'
+2019-01-23 17:08:48,403 [42] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Upload", controller = "Articles"}. Executing action Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)
+2019-01-23 17:08:48,412 [29] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks) with arguments (System.Collections.Generic.List`1[Microsoft.AspNetCore.Http.IFormFile]) - Validation state: Valid
+2019-01-23 17:08:48,412 [29] INFO Cocodrinks.Controllers.ArticlesController - ---- saving 1 files to C:\Cocodrinks\wwwroot\media\
+2019-01-23 17:08:48,412 [29] INFO Cocodrinks.Controllers.ArticlesController - -- saving file to C:\Cocodrinks\wwwroot\media\uren46.PNG
+2019-01-23 17:08:48,414 [24] INFO Cocodrinks.Controllers.ArticlesController - -- saving files done
+2019-01-23 17:08:48,414 [24] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2.1759ms.
+2019-01-23 17:08:48,420 [24] INFO Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int64, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2019-01-23 17:08:48,421 [24] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks) in 17.9373ms
+2019-01-23 17:08:48,421 [24] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)'
+2019-01-23 17:08:48,421 [24] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 19.1379ms 200 application/json; charset=utf-8
+2019-01-23 17:09:49,118 [13] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/Articles/Upload  
+2019-01-23 17:09:49,187 [13] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)'
+2019-01-23 17:09:49,197 [13] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Upload", controller = "Articles"}. Executing action Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)
+2019-01-23 17:09:49,206 [13] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks) - Validation state: Valid
+2019-01-23 17:09:49,208 [13] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.3199ms.
+2019-01-23 17:09:49,223 [13] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Upload.
+2019-01-23 17:09:49,339 [13] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Upload executed in 124.7552ms.
+2019-01-23 17:09:49,339 [13] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks) in 142.036ms
+2019-01-23 17:09:49,340 [13] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)'
+2019-01-23 17:09:49,348 [13] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 232.7611ms 200 text/html; charset=utf-8
+2019-01-23 17:09:50,965 [11] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/Articles/Upload  
+2019-01-23 17:09:50,973 [11] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)'
+2019-01-23 17:09:50,973 [11] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Upload", controller = "Articles"}. Executing action Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)
+2019-01-23 17:09:50,977 [11] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks) - Validation state: Valid
+2019-01-23 17:09:50,992 [11] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.1169ms.
+2019-01-23 17:09:50,993 [11] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Upload.
+2019-01-23 17:09:50,999 [11] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Upload executed in 6.4406ms.
+2019-01-23 17:09:50,999 [11] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks) in 25.5ms
+2019-01-23 17:09:51,000 [11] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)'
+2019-01-23 17:09:51,001 [11] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 35.5298ms 200 text/html; charset=utf-8
+2019-01-23 17:09:51,021 [11] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/lib/bootstrap/dist/css/bootstrap.css  
+2019-01-23 17:09:51,021 [12] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/css/site.css  
+2019-01-23 17:09:51,025 [13] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery/dist/jquery.js  
+2019-01-23 17:09:51,025 [10] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-01-23 17:09:51,025 [16] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0  
+2019-01-23 17:09:51,032 [16] INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/js/site.js'. Physical path: 'C:\Cocodrinks\wwwroot\js\site.js'
+2019-01-23 17:09:51,032 [12] INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/css/site.css'. Physical path: 'C:\Cocodrinks\wwwroot\css\site.css'
+2019-01-23 17:09:51,032 [16] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 7.2766ms 200 application/javascript
+2019-01-23 17:09:51,032 [12] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 11.004ms 200 text/css
+2019-01-23 17:09:51,063 [12] INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Cocodrinks\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+2019-01-23 17:09:51,063 [16] INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Cocodrinks\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js'
+2019-01-23 17:09:51,063 [14] INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Cocodrinks\wwwroot\lib\jquery\dist\jquery.js'
+2019-01-23 17:09:51,064 [12] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 43.2864ms 200 text/css
+2019-01-23 17:09:51,064 [14] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 39.5981ms 200 application/javascript
+2019-01-23 17:09:51,064 [16] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 39.4646ms 200 application/javascript
+2019-01-23 17:09:51,095 [16] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/favicon.ico  
+2019-01-23 17:09:51,096 [16] INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Cocodrinks\wwwroot\favicon.ico'
+2019-01-23 17:09:51,096 [16] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.7841ms 200 image/x-icon
+2019-01-23 17:09:55,841 [9] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST https://localhost:5001/Articles/Upload multipart/form-data; boundary=----WebKitFormBoundary9xGnvh9zAIuT3CJg 62824
+2019-01-23 17:09:55,841 [9] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)'
+2019-01-23 17:09:55,859 [9] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Upload", controller = "Articles"}. Executing action Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)
+2019-01-23 17:09:55,919 [9] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks) with arguments (System.Collections.Generic.List`1[Microsoft.AspNetCore.Http.IFormFile]) - Validation state: Valid
+2019-01-23 17:09:55,924 [9] INFO Cocodrinks.Controllers.ArticlesController - ---- saving 1 files to C:\Cocodrinks\wwwroot\media\
+2019-01-23 17:09:55,924 [9] INFO Cocodrinks.Controllers.ArticlesController - -- saving file to C:\Cocodrinks\wwwroot\media\uren47.PNG
+2019-01-23 17:09:55,933 [14] INFO Cocodrinks.Controllers.ArticlesController - -- saving files done
+2019-01-23 17:09:55,940 [14] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.ViewResult in 20.3373ms.
+2019-01-23 17:09:55,952 [14] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Upload.
+2019-01-23 17:09:55,954 [14] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Upload executed in 1.4704ms.
+2019-01-23 17:09:55,958 [14] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks) in 98.0534ms
+2019-01-23 17:09:55,961 [14] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)'
+2019-01-23 17:09:55,970 [14] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 129.4402ms 200 text/html; charset=utf-8
+2019-01-23 17:12:10,491 [26] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/Articles/Upload  
+2019-01-23 17:12:10,492 [26] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)'
+2019-01-23 17:12:10,492 [26] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Upload", controller = "Articles"}. Executing action Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)
+2019-01-23 17:12:10,493 [26] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks) - Validation state: Valid
+2019-01-23 17:12:10,501 [26] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0197ms.
+2019-01-23 17:12:11,626 [26] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Upload.
+2019-01-23 17:12:11,635 [26] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Upload executed in 1133.9842ms.
+2019-01-23 17:12:11,635 [26] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks) in 1141.9115ms
+2019-01-23 17:12:11,635 [26] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)'
+2019-01-23 17:12:11,635 [26] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1144.1875ms 200 text/html; charset=utf-8
+2019-01-23 17:12:17,278 [26] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/Articles/Upload  
+2019-01-23 17:12:17,279 [26] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)'
+2019-01-23 17:12:17,280 [26] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Upload", controller = "Articles"}. Executing action Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)
+2019-01-23 17:12:17,280 [26] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks) - Validation state: Valid
+2019-01-23 17:12:17,281 [26] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0201ms.
+2019-01-23 17:12:17,281 [26] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Upload.
+2019-01-23 17:12:17,283 [26] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Upload executed in 2.2222ms.
+2019-01-23 17:12:17,283 [26] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks) in 3.5816ms
+2019-01-23 17:12:17,284 [26] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)'
+2019-01-23 17:12:17,284 [26] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 5.7801ms 200 text/html; charset=utf-8
+2019-01-23 17:12:17,309 [26] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/lib/bootstrap/dist/css/bootstrap.css  
+2019-01-23 17:12:17,311 [20] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/css/site.css  
+2019-01-23 17:12:17,312 [25] INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/css/site.css'. Physical path: 'C:\Cocodrinks\wwwroot\css\site.css'
+2019-01-23 17:12:17,312 [25] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.2045ms 200 text/css
+2019-01-23 17:12:17,315 [18] INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Cocodrinks\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+2019-01-23 17:12:17,315 [18] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 6.5635ms 200 text/css
+2019-01-23 17:12:17,315 [25] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery/dist/jquery.js  
+2019-01-23 17:12:17,316 [18] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-01-23 17:12:17,316 [19] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0  
+2019-01-23 17:12:17,317 [26] INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Cocodrinks\wwwroot\lib\jquery\dist\jquery.js'
+2019-01-23 17:12:17,318 [19] INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/js/site.js'. Physical path: 'C:\Cocodrinks\wwwroot\js\site.js'
+2019-01-23 17:12:17,318 [21] INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Cocodrinks\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js'
+2019-01-23 17:12:17,318 [26] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 2.4691ms 200 application/javascript
+2019-01-23 17:12:17,318 [19] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.726ms 200 application/javascript
+2019-01-23 17:12:17,318 [21] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 2.4612ms 200 application/javascript
+2019-01-23 17:12:17,352 [21] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/favicon.ico  
+2019-01-23 17:12:17,353 [21] INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Cocodrinks\wwwroot\favicon.ico'
+2019-01-23 17:12:17,353 [21] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.7482ms 200 image/x-icon
+2019-01-23 17:12:21,629 [21] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST https://localhost:5001/Articles/Upload multipart/form-data; boundary=----WebKitFormBoundarySx182VTpzsAYaXmL 58807
+2019-01-23 17:12:21,630 [21] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)'
+2019-01-23 17:12:21,630 [21] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Upload", controller = "Articles"}. Executing action Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)
+2019-01-23 17:12:21,631 [21] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks) with arguments (System.Collections.Generic.List`1[Microsoft.AspNetCore.Http.IFormFile]) - Validation state: Valid
+2019-01-23 17:12:21,631 [21] INFO Cocodrinks.Controllers.ArticlesController - ---- saving 1 files to C:\Cocodrinks\wwwroot\media\
+2019-01-23 17:12:21,632 [21] INFO Cocodrinks.Controllers.ArticlesController - -- saving file to C:\Cocodrinks\wwwroot\media\uren48.PNG
+2019-01-23 17:12:21,634 [26] INFO Cocodrinks.Controllers.ArticlesController - -- saving files done
+2019-01-23 17:12:21,634 [26] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.ViewResult in 2.2261ms.
+2019-01-23 17:12:21,634 [26] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Upload.
+2019-01-23 17:12:21,635 [26] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Upload executed in 0.9094ms.
+2019-01-23 17:12:21,635 [26] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks) in 4.9951ms
+2019-01-23 17:12:21,635 [26] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)'
+2019-01-23 17:12:21,635 [26] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 6.0914ms 200 text/html; charset=utf-8
+2019-01-23 17:12:49,598 [21] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/Articles/  
+2019-01-23 17:12:49,598 [21] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks)'
+2019-01-23 17:12:49,601 [21] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Articles"}. Executing action Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks)
+2019-01-23 17:12:49,602 [21] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks) - Validation state: Valid
+2019-01-23 17:12:49,605 [21] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 2.2.1-servicing-10028 initialized 'CocodrinksContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2019-01-23 17:12:49,704 [21] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+2019-01-23 17:12:49,718 [21] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."Description", "a"."Imagelocation", "a"."Name"
+FROM "Articles" AS "a"
+2019-01-23 17:12:49,801 [21] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.ViewResult in 198.8841ms.
+2019-01-23 17:12:49,804 [21] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Index.
+2019-01-23 17:12:49,824 [21] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Index executed in 22.9159ms.
+2019-01-23 17:12:49,824 [21] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks) in 222.593ms
+2019-01-23 17:12:49,824 [21] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks)'
+2019-01-23 17:12:49,825 [21] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 226.7553ms 200 text/html; charset=utf-8
+2019-01-23 17:12:49,834 [21] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/Articles/images/pinksoda.png  
+2019-01-23 17:12:49,834 [13] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/Articles/images/bluesoda.png  
+2019-01-23 17:12:49,836 [13] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.9871ms 404 
+2019-01-23 17:12:49,836 [21] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 2.0329ms 404 
+2019-01-23 17:17:00,669 [11] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/Articles/  
+2019-01-23 17:17:00,726 [11] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks)'
+2019-01-23 17:17:00,739 [11] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Articles"}. Executing action Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks)
+2019-01-23 17:17:00,748 [11] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks) - Validation state: Valid
+2019-01-23 17:17:00,751 [11] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 2.2.1-servicing-10028 initialized 'CocodrinksContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2019-01-23 17:17:00,811 [11] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+2019-01-23 17:17:00,821 [11] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."Description", "a"."Imagelocation", "a"."Name"
+FROM "Articles" AS "a"
+2019-01-23 17:17:00,874 [11] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.ViewResult in 124.2973ms.
+2019-01-23 17:17:00,889 [11] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Index.
+2019-01-23 17:17:01,009 [11] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Index executed in 129.8009ms.
+2019-01-23 17:17:01,010 [11] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks) in 270.9185ms
+2019-01-23 17:17:01,010 [11] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks)'
+2019-01-23 17:17:01,017 [11] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 350.2247ms 200 text/html; charset=utf-8
+2019-01-23 17:17:01,024 [14] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/Articles/images/bluesoda.png  
+2019-01-23 17:17:01,024 [6] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/Articles/images/pinksoda.png  
+2019-01-23 17:17:01,029 [14] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 4.2062ms 404 
+2019-01-23 17:17:01,029 [6] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 4.2018ms 404 
+2019-01-23 17:17:06,121 [6] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/Articles/Upload/1  
+2019-01-23 17:17:06,123 [6] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)'
+2019-01-23 17:17:06,125 [6] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Upload", controller = "Articles"}. Executing action Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)
+2019-01-23 17:17:06,125 [6] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks) - Validation state: Valid
+2019-01-23 17:17:06,125 [6] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.1639ms.
+2019-01-23 17:17:06,128 [6] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Upload.
+2019-01-23 17:17:06,142 [6] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Upload executed in 16.0035ms.
+2019-01-23 17:17:06,142 [6] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks) in 17.2017ms
+2019-01-23 17:17:06,142 [6] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)'
+2019-01-23 17:17:06,142 [6] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 21.1748ms 200 text/html; charset=utf-8
+2019-01-23 17:17:16,867 [7] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST https://localhost:5001/Articles/Upload/1 multipart/form-data; boundary=----WebKitFormBoundaryT82dQJFF3p1yo85q 45571
+2019-01-23 17:17:16,868 [7] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)'
+2019-01-23 17:17:16,882 [7] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Upload", controller = "Articles"}. Executing action Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)
+2019-01-23 17:17:16,935 [7] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks) with arguments (System.Collections.Generic.List`1[Microsoft.AspNetCore.Http.IFormFile]) - Validation state: Valid
+2019-01-23 17:17:16,938 [7] INFO Cocodrinks.Controllers.ArticlesController - ---- saving 1 files to C:\Cocodrinks\wwwroot\media\
+2019-01-23 17:17:16,939 [7] INFO Cocodrinks.Controllers.ArticlesController - -- saving file to C:\Cocodrinks\wwwroot\media\citrix_err2.PNG
+2019-01-23 17:17:16,944 [14] INFO Cocodrinks.Controllers.ArticlesController - -- saving files done
+2019-01-23 17:17:16,948 [14] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.ViewResult in 12.1801ms.
+2019-01-23 17:17:16,955 [14] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Upload.
+2019-01-23 17:17:16,956 [14] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Upload executed in 0.8517ms.
+2019-01-23 17:17:16,958 [14] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks) in 75.3978ms
+2019-01-23 17:17:16,959 [14] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)'
+2019-01-23 17:17:16,971 [14] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 103.5124ms 200 text/html; charset=utf-8
+2019-01-23 17:17:54,526 [23] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/Articles  
+2019-01-23 17:17:54,526 [23] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks)'
+2019-01-23 17:17:54,526 [23] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Articles"}. Executing action Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks)
+2019-01-23 17:17:54,527 [23] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks) - Validation state: Valid
+2019-01-23 17:17:54,527 [23] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 2.2.1-servicing-10028 initialized 'CocodrinksContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2019-01-23 17:17:54,528 [23] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+2019-01-23 17:17:54,530 [23] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."Description", "a"."Imagelocation", "a"."Name"
+FROM "Articles" AS "a"
+2019-01-23 17:17:54,530 [23] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.ViewResult in 3.3813ms.
+2019-01-23 17:17:55,741 [23] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Index.
+2019-01-23 17:17:55,754 [23] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Index executed in 1223.3558ms.
+2019-01-23 17:17:55,754 [23] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks) in 1227.34ms
+2019-01-23 17:17:55,754 [23] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks)'
+2019-01-23 17:17:55,754 [23] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1228.4687ms 200 text/html; charset=utf-8
+2019-01-23 17:17:55,764 [19] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/images/pinksoda.png  
+2019-01-23 17:17:55,764 [22] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/images/bluesoda.png  
+2019-01-23 17:17:55,766 [19] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.3791ms 404 
+2019-01-23 17:17:55,766 [22] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.37ms 404 
+2019-01-23 17:17:58,427 [22] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/Articles/Edit/1  
+2019-01-23 17:17:58,427 [22] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.ArticlesController.Edit (Cocodrinks)'
+2019-01-23 17:17:58,431 [22] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Edit", controller = "Articles"}. Executing action Cocodrinks.Controllers.ArticlesController.Edit (Cocodrinks)
+2019-01-23 17:17:58,432 [22] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.ArticlesController.Edit (Cocodrinks) with arguments (1) - Validation state: Valid
+2019-01-23 17:17:58,434 [22] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 2.2.1-servicing-10028 initialized 'CocodrinksContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2019-01-23 17:17:58,516 [22] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+2019-01-23 17:17:58,533 [22] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (5ms) [Parameters=[@__get_Item_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT "e"."Id", "e"."Description", "e"."Imagelocation", "e"."Name"
+FROM "Articles" AS "e"
+WHERE "e"."Id" = @__get_Item_0
+LIMIT 1
+2019-01-23 17:17:58,547 [22] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.ArticlesController.Edit (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.ViewResult in 114.8522ms.
+2019-01-23 17:17:58,550 [22] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Edit.
+2019-01-23 17:17:58,598 [22] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Edit executed in 50.7887ms.
+2019-01-23 17:17:58,598 [22] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.ArticlesController.Edit (Cocodrinks) in 167.0821ms
+2019-01-23 17:17:58,599 [22] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.ArticlesController.Edit (Cocodrinks)'
+2019-01-23 17:17:58,599 [22] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 172.0761ms 200 text/html; charset=utf-8
+2019-01-23 17:18:04,080 [19] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST https://localhost:5001/Articles/Edit/1 application/x-www-form-urlencoded 268
+2019-01-23 17:18:04,080 [19] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.ArticlesController.Edit (Cocodrinks)'
+2019-01-23 17:18:04,087 [19] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Edit", controller = "Articles"}. Executing action Cocodrinks.Controllers.ArticlesController.Edit (Cocodrinks)
+2019-01-23 17:18:04,098 [19] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.ArticlesController.Edit (Cocodrinks) with arguments (1, Cocodrinks.Models.Article) - Validation state: Valid
+2019-01-23 17:18:04,102 [19] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 2.2.1-servicing-10028 initialized 'CocodrinksContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2019-01-23 17:18:04,160 [19] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+2019-01-23 17:18:04,277 [19] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (5ms) [Parameters=[@p3='?', @p0='?' (Size = 14), @p1='?' (Size = 20), @p2='?' (Size = 9)], CommandType='Text', CommandTimeout='30']
+UPDATE "Articles" SET "Description" = @p0, "Imagelocation" = @p1, "Name" = @p2
+WHERE "Id" = @p3;
+SELECT changes();
+2019-01-23 17:18:04,320 [19] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.ArticlesController.Edit (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.RedirectToActionResult in 221.919ms.
+2019-01-23 17:18:04,321 [19] INFO Microsoft.AspNetCore.Mvc.RedirectToActionResult - Executing RedirectResult, redirecting to /Articles.
+2019-01-23 17:18:04,322 [19] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.ArticlesController.Edit (Cocodrinks) in 234.1852ms
+2019-01-23 17:18:04,322 [19] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.ArticlesController.Edit (Cocodrinks)'
+2019-01-23 17:18:04,322 [19] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 242.414ms 302 
+2019-01-23 17:18:04,324 [21] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/Articles  
+2019-01-23 17:18:04,324 [21] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks)'
+2019-01-23 17:18:04,325 [21] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Articles"}. Executing action Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks)
+2019-01-23 17:18:04,325 [21] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks) - Validation state: Valid
+2019-01-23 17:18:04,325 [21] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 2.2.1-servicing-10028 initialized 'CocodrinksContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2019-01-23 17:18:04,331 [21] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+2019-01-23 17:18:04,332 [21] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."Description", "a"."Imagelocation", "a"."Name"
+FROM "Articles" AS "a"
+2019-01-23 17:18:04,332 [21] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.ViewResult in 7.305ms.
+2019-01-23 17:18:04,333 [21] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Index.
+2019-01-23 17:18:04,336 [21] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Index executed in 3.4429ms.
+2019-01-23 17:18:04,336 [21] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks) in 11.4816ms
+2019-01-23 17:18:04,337 [21] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks)'
+2019-01-23 17:18:04,337 [21] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 12.7395ms 200 text/html; charset=utf-8
+2019-01-23 17:18:04,346 [23] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/images/bluesoda.png  
+2019-01-23 17:18:04,346 [21] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/images/pinksoda.png  
+2019-01-23 17:18:04,347 [21] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.3903ms 404 
+2019-01-23 17:18:04,347 [23] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.3907ms 404 
+2019-01-23 17:18:06,481 [23] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/Articles  
+2019-01-23 17:18:06,482 [23] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks)'
+2019-01-23 17:18:06,483 [23] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Articles"}. Executing action Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks)
+2019-01-23 17:18:06,483 [23] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks) - Validation state: Valid
+2019-01-23 17:18:06,484 [23] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 2.2.1-servicing-10028 initialized 'CocodrinksContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2019-01-23 17:18:06,486 [23] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+2019-01-23 17:18:06,487 [23] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."Description", "a"."Imagelocation", "a"."Name"
+FROM "Articles" AS "a"
+2019-01-23 17:18:06,488 [23] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.ViewResult in 3.9778ms.
+2019-01-23 17:18:06,488 [23] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Index.
+2019-01-23 17:18:06,496 [23] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Index executed in 7.8166ms.
+2019-01-23 17:18:06,496 [23] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks) in 13.3309ms
+2019-01-23 17:18:06,497 [23] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks)'
+2019-01-23 17:18:06,497 [23] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 15.74ms 200 text/html; charset=utf-8
+2019-01-23 17:18:06,514 [21] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/images/pinksoda.png  
+2019-01-23 17:18:06,515 [21] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.8576ms 404 
+2019-01-23 17:18:06,516 [23] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/images/bluesoda.png  
+2019-01-23 17:18:06,516 [23] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.5696ms 404 
+2019-01-23 17:18:06,540 [23] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/favicon.ico  
+2019-01-23 17:18:06,550 [21] INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Cocodrinks\wwwroot\favicon.ico'
+2019-01-23 17:18:06,551 [21] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 10.6314ms 200 image/x-icon
+2019-01-23 17:18:22,383 [22] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/Articles/Edit/1  
+2019-01-23 17:18:22,383 [22] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.ArticlesController.Edit (Cocodrinks)'
+2019-01-23 17:18:22,383 [22] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Edit", controller = "Articles"}. Executing action Cocodrinks.Controllers.ArticlesController.Edit (Cocodrinks)
+2019-01-23 17:18:22,384 [22] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.ArticlesController.Edit (Cocodrinks) with arguments (1) - Validation state: Valid
+2019-01-23 17:18:22,384 [22] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 2.2.1-servicing-10028 initialized 'CocodrinksContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2019-01-23 17:18:22,389 [22] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+2019-01-23 17:18:22,389 [22] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT "e"."Id", "e"."Description", "e"."Imagelocation", "e"."Name"
+FROM "Articles" AS "e"
+WHERE "e"."Id" = @__get_Item_0
+LIMIT 1
+2019-01-23 17:18:22,390 [22] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.ArticlesController.Edit (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.ViewResult in 6.108ms.
+2019-01-23 17:18:22,390 [22] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Edit.
+2019-01-23 17:18:22,392 [22] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Edit executed in 2.0677ms.
+2019-01-23 17:18:22,392 [22] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.ArticlesController.Edit (Cocodrinks) in 8.9607ms
+2019-01-23 17:18:22,393 [22] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.ArticlesController.Edit (Cocodrinks)'
+2019-01-23 17:18:22,393 [22] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 10.2186ms 200 text/html; charset=utf-8
+2019-01-23 17:18:28,729 [21] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST https://localhost:5001/Articles/Edit/1 application/x-www-form-urlencoded 267
+2019-01-23 17:18:28,730 [21] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.ArticlesController.Edit (Cocodrinks)'
+2019-01-23 17:18:28,730 [21] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Edit", controller = "Articles"}. Executing action Cocodrinks.Controllers.ArticlesController.Edit (Cocodrinks)
+2019-01-23 17:18:28,731 [21] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.ArticlesController.Edit (Cocodrinks) with arguments (1, Cocodrinks.Models.Article) - Validation state: Valid
+2019-01-23 17:18:28,731 [21] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 2.2.1-servicing-10028 initialized 'CocodrinksContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2019-01-23 17:18:28,732 [21] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+2019-01-23 17:18:28,733 [21] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[@p3='?', @p0='?' (Size = 14), @p1='?' (Size = 19), @p2='?' (Size = 9)], CommandType='Text', CommandTimeout='30']
+UPDATE "Articles" SET "Description" = @p0, "Imagelocation" = @p1, "Name" = @p2
+WHERE "Id" = @p3;
+SELECT changes();
+2019-01-23 17:18:28,740 [21] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.ArticlesController.Edit (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.RedirectToActionResult in 8.9283ms.
+2019-01-23 17:18:28,740 [21] INFO Microsoft.AspNetCore.Mvc.RedirectToActionResult - Executing RedirectResult, redirecting to /Articles.
+2019-01-23 17:18:28,740 [21] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.ArticlesController.Edit (Cocodrinks) in 10.2791ms
+2019-01-23 17:18:28,740 [21] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.ArticlesController.Edit (Cocodrinks)'
+2019-01-23 17:18:28,740 [21] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 11.2683ms 302 
+2019-01-23 17:18:28,743 [22] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/Articles  
+2019-01-23 17:18:28,744 [22] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks)'
+2019-01-23 17:18:28,744 [22] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Articles"}. Executing action Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks)
+2019-01-23 17:18:28,744 [22] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks) - Validation state: Valid
+2019-01-23 17:18:28,745 [22] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 2.2.1-servicing-10028 initialized 'CocodrinksContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2019-01-23 17:18:28,752 [22] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+2019-01-23 17:18:28,752 [22] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."Description", "a"."Imagelocation", "a"."Name"
+FROM "Articles" AS "a"
+2019-01-23 17:18:28,752 [22] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.ViewResult in 8.1031ms.
+2019-01-23 17:18:28,753 [22] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Index.
+2019-01-23 17:18:28,756 [22] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Index executed in 3.3718ms.
+2019-01-23 17:18:28,756 [22] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks) in 12.3192ms
+2019-01-23 17:18:28,756 [22] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks)'
+2019-01-23 17:18:28,757 [22] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 13.4158ms 200 text/html; charset=utf-8
+2019-01-23 17:18:28,771 [22] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/media/pinksoda.png  
+2019-01-23 17:18:28,773 [21] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/images/bluesoda.png  
+2019-01-23 17:18:28,773 [21] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.5293ms 404 
+2019-01-23 17:18:28,778 [23] INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/media/pinksoda.png'. Physical path: 'C:\Cocodrinks\wwwroot\media\pinksoda.png'
+2019-01-23 17:18:28,778 [23] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 6.9771ms 200 image/png
+2019-01-23 17:22:03,467 [37] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/Articles  
+2019-01-23 17:22:03,468 [37] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks)'
+2019-01-23 17:22:03,468 [37] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Articles"}. Executing action Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks)
+2019-01-23 17:22:03,469 [37] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks) - Validation state: Valid
+2019-01-23 17:22:03,470 [37] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 2.2.1-servicing-10028 initialized 'CocodrinksContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2019-01-23 17:22:03,472 [37] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+2019-01-23 17:22:03,473 [37] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."Description", "a"."Imagelocation", "a"."Name"
+FROM "Articles" AS "a"
+2019-01-23 17:22:03,476 [37] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.ViewResult in 6.6239ms.
+2019-01-23 17:22:03,696 [37] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Index.
+2019-01-23 17:22:03,708 [37] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Index executed in 216.7547ms.
+2019-01-23 17:22:03,708 [37] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks) in 239.8176ms
+2019-01-23 17:22:03,709 [37] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks)'
+2019-01-23 17:22:03,709 [37] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 242.0086ms 200 text/html; charset=utf-8
+2019-01-23 17:22:03,719 [37] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/lib/bootstrap/dist/css/bootstrap.css  
+2019-01-23 17:22:03,719 [48] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/css/site.css  
+2019-01-23 17:22:03,724 [34] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery/dist/jquery.js  
+2019-01-23 17:22:03,725 [42] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/lib/bootstrap/dist/js/bootstrap.bundle.js  
+2019-01-23 17:22:03,726 [35] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/media/pinksoda.png  
+2019-01-23 17:22:03,726 [43] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/images/bluesoda.png  
+2019-01-23 17:22:03,727 [43] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.8055ms 404 
+2019-01-23 17:22:03,727 [37] INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Cocodrinks\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+2019-01-23 17:22:03,729 [37] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 9.1942ms 200 text/css
+2019-01-23 17:22:03,735 [32] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0  
+2019-01-23 17:22:03,735 [32] INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/js/site.js'. Physical path: 'C:\Cocodrinks\wwwroot\js\site.js'
+2019-01-23 17:22:03,735 [32] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.7521ms 200 application/javascript
+2019-01-23 17:22:03,739 [48] INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/css/site.css'. Physical path: 'C:\Cocodrinks\wwwroot\css\site.css'
+2019-01-23 17:22:03,739 [48] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 19.3797ms 200 text/css
+2019-01-23 17:22:03,745 [42] INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/media/pinksoda.png'. Physical path: 'C:\Cocodrinks\wwwroot\media\pinksoda.png'
+2019-01-23 17:22:03,745 [43] INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Cocodrinks\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js'
+2019-01-23 17:22:03,745 [47] INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Cocodrinks\wwwroot\lib\jquery\dist\jquery.js'
+2019-01-23 17:22:03,752 [42] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 25.4526ms 200 image/png
+2019-01-23 17:22:03,752 [47] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 27.5014ms 200 application/javascript
+2019-01-23 17:22:03,752 [43] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 26.5742ms 200 application/javascript
+2019-01-23 17:22:03,822 [32] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/favicon.ico  
+2019-01-23 17:22:03,823 [32] INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Cocodrinks\wwwroot\favicon.ico'
+2019-01-23 17:22:03,823 [32] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.6629ms 200 image/x-icon
+2019-01-23 17:22:14,969 [32] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/Articles/Edit/1  
+2019-01-23 17:22:14,969 [32] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.ArticlesController.Edit (Cocodrinks)'
+2019-01-23 17:22:14,970 [32] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Edit", controller = "Articles"}. Executing action Cocodrinks.Controllers.ArticlesController.Edit (Cocodrinks)
+2019-01-23 17:22:14,970 [32] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.ArticlesController.Edit (Cocodrinks) with arguments (1) - Validation state: Valid
+2019-01-23 17:22:14,971 [32] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 2.2.1-servicing-10028 initialized 'CocodrinksContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2019-01-23 17:22:14,972 [32] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+2019-01-23 17:22:14,972 [32] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT "e"."Id", "e"."Description", "e"."Imagelocation", "e"."Name"
+FROM "Articles" AS "e"
+WHERE "e"."Id" = @__get_Item_0
+LIMIT 1
+2019-01-23 17:22:14,973 [32] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.ArticlesController.Edit (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.ViewResult in 2.1368ms.
+2019-01-23 17:22:14,973 [32] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Edit.
+2019-01-23 17:22:14,974 [32] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Edit executed in 1.4048ms.
+2019-01-23 17:22:14,975 [32] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.ArticlesController.Edit (Cocodrinks) in 4.9335ms
+2019-01-23 17:22:14,975 [32] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.ArticlesController.Edit (Cocodrinks)'
+2019-01-23 17:22:14,976 [32] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 6.7476ms 200 text/html; charset=utf-8
+2019-01-23 17:22:14,984 [32] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/css/site.css  
+2019-01-23 17:22:14,986 [32] INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware - The file /css/site.css was not modified
+2019-01-23 17:22:14,987 [32] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 2.9688ms 304 text/css
+2019-01-23 17:22:22,632 [43] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/Articles/Details/1  
+2019-01-23 17:22:22,633 [43] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.ArticlesController.Details (Cocodrinks)'
+2019-01-23 17:22:22,636 [43] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Details", controller = "Articles"}. Executing action Cocodrinks.Controllers.ArticlesController.Details (Cocodrinks)
+2019-01-23 17:22:22,637 [43] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.ArticlesController.Details (Cocodrinks) with arguments (1) - Validation state: Valid
+2019-01-23 17:22:22,639 [43] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 2.2.1-servicing-10028 initialized 'CocodrinksContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2019-01-23 17:22:22,664 [43] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+2019-01-23 17:22:22,666 [43] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT "m"."Id", "m"."Description", "m"."Imagelocation", "m"."Name"
+FROM "Articles" AS "m"
+WHERE "m"."Id" = @__id_0
+LIMIT 1
+2019-01-23 17:22:22,667 [43] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.ArticlesController.Details (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.ViewResult in 29.9488ms.
+2019-01-23 17:22:22,933 [43] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Details.
+2019-01-23 17:22:22,948 [43] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Details executed in 280.8641ms.
+2019-01-23 17:22:22,948 [43] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.ArticlesController.Details (Cocodrinks) in 311.7915ms
+2019-01-23 17:22:22,948 [43] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.ArticlesController.Details (Cocodrinks)'
+2019-01-23 17:22:22,949 [43] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 316.4011ms 200 text/html; charset=utf-8
+2019-01-23 17:22:22,960 [43] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/css/site.css  
+2019-01-23 17:22:22,961 [43] INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware - The file /css/site.css was not modified
+2019-01-23 17:22:22,961 [43] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.8284ms 304 text/css
+2019-01-23 17:22:35,986 [35] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/Articles  
+2019-01-23 17:22:35,986 [35] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks)'
+2019-01-23 17:22:35,986 [35] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Articles"}. Executing action Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks)
+2019-01-23 17:22:35,987 [35] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks) - Validation state: Valid
+2019-01-23 17:22:35,987 [35] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 2.2.1-servicing-10028 initialized 'CocodrinksContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2019-01-23 17:22:35,987 [35] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+2019-01-23 17:22:35,988 [35] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."Description", "a"."Imagelocation", "a"."Name"
+FROM "Articles" AS "a"
+2019-01-23 17:22:35,988 [35] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1.3997ms.
+2019-01-23 17:22:35,988 [35] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Index.
+2019-01-23 17:22:35,991 [35] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Index executed in 2.9195ms.
+2019-01-23 17:22:35,991 [35] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks) in 4.9307ms
+2019-01-23 17:22:35,992 [35] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.ArticlesController.Index (Cocodrinks)'
+2019-01-23 17:22:35,992 [35] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 6.9036ms 200 text/html; charset=utf-8
+2019-01-23 17:22:36,002 [43] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/images/bluesoda.png  
+2019-01-23 17:22:36,002 [35] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/css/site.css  
+2019-01-23 17:22:36,003 [35] INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware - The file /css/site.css was not modified
+2019-01-23 17:22:36,003 [35] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.5463ms 304 text/css
+2019-01-23 17:22:36,003 [43] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.5305ms 404 
+2019-01-23 17:22:47,371 [43] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/Articles/Upload/1  
+2019-01-23 17:22:47,371 [43] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)'
+2019-01-23 17:22:47,371 [43] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Upload", controller = "Articles"}. Executing action Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)
+2019-01-23 17:22:47,372 [43] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks) - Validation state: Valid
+2019-01-23 17:22:47,372 [43] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0193ms.
+2019-01-23 17:22:47,372 [43] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Upload.
+2019-01-23 17:22:47,373 [43] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Upload executed in 0.9272ms.
+2019-01-23 17:22:47,373 [43] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks) in 1.6071ms
+2019-01-23 17:22:47,373 [43] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.ArticlesController.Upload (Cocodrinks)'
+2019-01-23 17:22:47,374 [43] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 2.5528ms 200 text/html; charset=utf-8
+2019-01-23 17:22:47,391 [28] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/css/site.css  
+2019-01-23 17:22:47,392 [28] INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware - The file /css/site.css was not modified
+2019-01-23 17:22:47,398 [28] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 7.0475ms 304 text/css

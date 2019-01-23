@@ -19,7 +19,7 @@
                 @Html.DisplayNameFor(model => model.Description)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Imagelocation)
+               Image
             </th>
             <th></th>
         </tr>
@@ -34,7 +34,8 @@
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
             <td>
-                <img src="@Html.DisplayFor(modelItem => item.Imagelocation)" \>
+                <img class="thumbnail" src="@Html.DisplayFor(modelItem => item.Imagelocation)" \>
+                <a asp-action="Upload" asp-route-id="@item.Id">Upload image</a> 
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

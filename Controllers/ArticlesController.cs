@@ -6,16 +6,24 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Cocodrinks.Models;
+using System.IO;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Http;
 
 namespace Cocodrinks.Controllers
 {
     public class ArticlesController : Controller
     {
         private readonly CocodrinksContext _context;
+        private readonly IHostingEnvironment _hostingEnvironment;
+        private readonly ILogger<ArticlesController> _logger;
 
-        public ArticlesController(CocodrinksContext context)
+        public ArticlesController(CocodrinksContext context,IHostingEnvironment hostingEnvironment, ILogger<ArticlesController> logger)
         {
             _context = context;
+            _hostingEnvironment = hostingEnvironment;
+            _logger = logger;
         }
 
         // GET: Articles
@@ -148,5 +156,42 @@ namespace Cocodrinks.Controllers
         {
             return _context.Articles.Any(e => e.Id == id);
         }
+    // GET: Articles/Upload
+        public IActionResult Upload()
+        {
+            return View();
+        }
+
+    [HttpPost] //("Upload")
+    public async Task<IActionResult> Upload(List<IFormFile> files)
+    {
+        long size = files.Sum(f => f.Length);
+
+        // full path to file in temp location
+        var filePath = _hostingEnvironment.WebRootPath+"\\media\\"; //Path.GetTempFileName();
+        _logger.LogInformation("---- saving "+files.Count()+ " files to "+filePath);
+        foreach (var formFile in files)
+        {
+            if (formFile.Length > 0)
+            {
+                _logger.LogInformation("-- saving file to "+filePath+formFile.FileName);
+                using (var stream = new FileStream(filePath+formFile.FileName, FileMode.Create))
+                {
+                    await formFile.CopyToAsync(stream);
+                }
+
+            }
+        }
+        _logger.LogInformation("-- saving files done");
+
+        
+        //return Ok(new { count = files.Count, size, filePath});
+        ViewData["Message"] = files.Count()+" Files have been uploaded";
+        return View();
     }
+
+
+    }
+
+
 }

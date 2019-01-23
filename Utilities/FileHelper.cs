@@ -13,7 +13,7 @@ namespace Cocodrinks.Utilities
 {
     public class FileHelper
     {
-        public static async Task<string> ProcessFormFile(IFormFile formFile, 
+        public static async Task<string> ProcessFormFile(Microsoft.AspNetCore.Http.IFormFile formFile, 
             ModelStateDictionary modelState)
         {
             var fieldDisplayName = string.Empty;

@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Cocodrinks.Migrations
 {
     [DbContext(typeof(CocodrinksContext))]
-    [Migration("20190123110159_initialagain")]
+    [Migration("20190123150851_initialagain")]
     partial class initialagain
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -29,11 +29,7 @@ namespace Cocodrinks.Migrations
 
                     b.Property<string>("Name");
 
-                    b.Property<int?>("OrderId");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("OrderId");
 
                     b.ToTable("Articles");
                 });
@@ -78,6 +74,26 @@ namespace Cocodrinks.Migrations
                     b.ToTable("Orders");
                 });
 
+            modelBuilder.Entity("Cocodrinks.Models.OrderLine", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("ArticleId");
+
+                    b.Property<int>("OrderId");
+
+                    b.Property<int>("Quantity");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ArticleId");
+
+                    b.HasIndex("OrderId");
+
+                    b.ToTable("OrderLines");
+                });
+
             modelBuilder.Entity("Cocodrinks.Models.User", b =>
                 {
                     b.Property<int>("Id")
@@ -100,18 +116,24 @@ namespace Cocodrinks.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("Cocodrinks.Models.Article", b =>
-                {
-                    b.HasOne("Cocodrinks.Models.Order")
-                        .WithMany("Articles")
-                        .HasForeignKey("OrderId");
-                });
-
             modelBuilder.Entity("Cocodrinks.Models.Order", b =>
                 {
                     b.HasOne("Cocodrinks.Models.User", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("Cocodrinks.Models.OrderLine", b =>
+                {
+                    b.HasOne("Cocodrinks.Models.Article", "Article")
+                        .WithMany()
+                        .HasForeignKey("ArticleId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Cocodrinks.Models.Order", "Order")
+                        .WithMany("OrderLines")
+                        .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
