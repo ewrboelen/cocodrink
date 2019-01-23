@@ -1,0 +1,50 @@
+2019-01-23 10:04:52,246 [15] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/User/Logout  
+2019-01-23 10:04:52,314 [15] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.UserController.Logout (Cocodrinks)'
+2019-01-23 10:04:52,324 [15] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Logout", controller = "User"}. Executing action Cocodrinks.Controllers.UserController.Logout (Cocodrinks)
+2019-01-23 10:04:52,333 [15] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.UserController.Logout (Cocodrinks) - Validation state: Valid
+2019-01-23 10:04:52,334 [15] INFO Microsoft.AspNetCore.Session.DistributedSession - Accessing expired session, Key:13a0b0f7-295c-a15d-1f5b-ba249f45136d
+2019-01-23 10:04:52,340 [15] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.UserController.Logout (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.RedirectResult in 5.1357ms.
+2019-01-23 10:04:52,344 [15] INFO Microsoft.AspNetCore.Mvc.Infrastructure.RedirectResultExecutor - Executing RedirectResult, redirecting to /Home/Login.
+2019-01-23 10:04:52,347 [15] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.UserController.Logout (Cocodrinks) in 20.8671ms
+2019-01-23 10:04:52,348 [15] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.UserController.Logout (Cocodrinks)'
+2019-01-23 10:04:52,350 [15] INFO Microsoft.AspNetCore.Session.DistributedSession - Session started; Key:13a0b0f7-295c-a15d-1f5b-ba249f45136d, Id:1211a11b-fa4f-69ae-11e9-f50918abdef8
+2019-01-23 10:04:52,385 [15] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 141.6062ms 302 
+2019-01-23 10:04:52,395 [15] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/Home/Login  
+2019-01-23 10:04:52,397 [15] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.HomeController.Login (Cocodrinks)'
+2019-01-23 10:04:52,409 [15] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Login", controller = "Home"}. Executing action Cocodrinks.Controllers.HomeController.Login (Cocodrinks)
+2019-01-23 10:04:52,424 [15] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.HomeController.Login (Cocodrinks) with arguments (Cocodrinks.Models.LoginViewModel) - Validation state: Invalid
+2019-01-23 10:04:52,426 [15] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.HomeController.Login (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.8422ms.
+2019-01-23 10:04:52,438 [15] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Login.
+2019-01-23 10:04:52,572 [15] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Login executed in 144.2412ms.
+2019-01-23 10:04:52,573 [15] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.HomeController.Login (Cocodrinks) in 163.1548ms
+2019-01-23 10:04:52,573 [15] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.HomeController.Login (Cocodrinks)'
+2019-01-23 10:04:52,577 [15] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 181.972ms 200 text/html; charset=utf-8
+2019-01-23 10:04:59,791 [15] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST https://localhost:5001/Home/Login application/x-www-form-urlencoded 201
+2019-01-23 10:04:59,792 [15] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.HomeController.Login (Cocodrinks)'
+2019-01-23 10:04:59,792 [15] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Login", controller = "Home"}. Executing action Cocodrinks.Controllers.HomeController.Login (Cocodrinks)
+2019-01-23 10:04:59,809 [15] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.HomeController.Login (Cocodrinks) with arguments (Cocodrinks.Models.LoginViewModel) - Validation state: Invalid
+2019-01-23 10:04:59,809 [15] WARN Cocodrinks.Controllers.HomeController -  got form post aha
+2019-01-23 10:04:59,810 [15] INFO Microsoft.EntityFrameworkCore.Infrastructure - Entity Framework Core 2.2.1-servicing-10028 initialized 'CocodrinksContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2019-01-23 10:04:59,816 [15] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+2019-01-23 10:05:00,009 [15] INFO Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (7ms) [Parameters=[@p0='?', @p1='?', @p2='?' (Size = 3), @p3='?'], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Users" ("CreateDate", "Logincount", "Name", "Password")
+VALUES (@p0, @p1, @p2, @p3);
+SELECT "Id"
+FROM "Users"
+WHERE changes() = 1 AND "Id" = last_insert_rowid();
+2019-01-23 10:05:00,043 [15] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.HomeController.Login (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.RedirectResult in 234.4152ms.
+2019-01-23 10:05:00,044 [15] INFO Microsoft.AspNetCore.Mvc.Infrastructure.RedirectResultExecutor - Executing RedirectResult, redirecting to Index.
+2019-01-23 10:05:00,044 [15] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.HomeController.Login (Cocodrinks) in 251.3941ms
+2019-01-23 10:05:00,044 [15] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.HomeController.Login (Cocodrinks)'
+2019-01-23 10:05:00,047 [15] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 256.6698ms 302 
+2019-01-23 10:05:00,048 [15] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET https://localhost:5001/Home/Index  
+2019-01-23 10:05:00,048 [15] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Cocodrinks.Controllers.HomeController.Index (Cocodrinks)'
+2019-01-23 10:05:00,049 [15] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "Index", controller = "Home"}. Executing action Cocodrinks.Controllers.HomeController.Index (Cocodrinks)
+2019-01-23 10:05:00,049 [15] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executing action method Cocodrinks.Controllers.HomeController.Index (Cocodrinks) - Validation state: Valid
+2019-01-23 10:05:00,050 [15] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action method Cocodrinks.Controllers.HomeController.Index (Cocodrinks), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.4519ms.
+2019-01-23 10:05:00,051 [15] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Index.
+2019-01-23 10:05:00,080 [15] INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Index executed in 29.8227ms.
+2019-01-23 10:05:00,080 [15] INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker - Executed action Cocodrinks.Controllers.HomeController.Index (Cocodrinks) in 30.9269ms
+2019-01-23 10:05:00,080 [15] INFO Microsoft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Cocodrinks.Controllers.HomeController.Index (Cocodrinks)'
+2019-01-23 10:05:00,081 [15] INFO Microsoft.AspNetCore.Hosting.Internal.WebHost - Request finished in 33.1468ms 200 text/html; charset=utf-8

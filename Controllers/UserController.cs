@@ -7,20 +7,24 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Cocodrinks.Models;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Logging;
 
 namespace Cocodrinks.Controllers
 {
     public class UserController : Controller
     {
         private readonly CocodrinksContext _context;
+        private readonly ILogger<UserController> _logger;
 
-        public UserController(CocodrinksContext context)
+        public UserController(CocodrinksContext context,ILogger<UserController> logger)
         {
             _context = context;
+            _logger = logger;
         }
 
         public IActionResult Logout()
         {
+            _logger.LogInformation("logging out "+ HttpContext.Session.GetString("username"));
             HttpContext.Session.SetString("username","");
             HttpContext.Session.Clear();
             return this.Redirect("/Home/Login");
@@ -30,7 +34,7 @@ namespace Cocodrinks.Controllers
         // GET: User
         public async Task<IActionResult> Index()
         {
-            return View(await _context.User.ToListAsync());
+            return View(await _context.Users.ToListAsync());
         }
 
         // GET: User/Details/5
@@ -41,7 +45,7 @@ namespace Cocodrinks.Controllers
                 return NotFound();
             }
 
-            var user = await _context.User
+            var user = await _context.Users
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (user == null)
             {
@@ -81,7 +85,7 @@ namespace Cocodrinks.Controllers
                 return NotFound();
             }
 
-            var user = await _context.User.FindAsync(id);
+            var user = await _context.Users.FindAsync(id);
             if (user == null)
             {
                 return NotFound();
@@ -132,7 +136,7 @@ namespace Cocodrinks.Controllers
                 return NotFound();
             }
 
-            var user = await _context.User
+            var user = await _context.Users
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (user == null)
             {
@@ -147,15 +151,15 @@ namespace Cocodrinks.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var user = await _context.User.FindAsync(id);
-            _context.User.Remove(user);
+            var user = await _context.Users.FindAsync(id);
+            _context.Users.Remove(user);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool UserExists(int id)
         {
-            return _context.User.Any(e => e.Id == id);
+            return _context.Users.Any(e => e.Id == id);
         }
     }
 }

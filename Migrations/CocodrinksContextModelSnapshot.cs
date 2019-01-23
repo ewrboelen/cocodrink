@@ -85,7 +85,7 @@ namespace Cocodrinks.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("User");
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("Cocodrinks.Models.Article", b =>

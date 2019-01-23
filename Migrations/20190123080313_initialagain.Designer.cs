@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Cocodrinks.Migrations
 {
     [DbContext(typeof(CocodrinksContext))]
-    [Migration("20190122134527_imagetable")]
-    partial class imagetable
+    [Migration("20190123080313_initialagain")]
+    partial class initialagain
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -87,7 +87,7 @@ namespace Cocodrinks.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("User");
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("Cocodrinks.Models.Article", b =>

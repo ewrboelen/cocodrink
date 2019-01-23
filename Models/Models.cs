@@ -11,12 +11,15 @@ namespace Cocodrinks.Models
 {
     public class CocodrinksContext : DbContext
     {
+       
         public CocodrinksContext (DbContextOptions<CocodrinksContext> options)
             : base(options)
         {
+            //Database.SetInitializer<CocodrinksContext>(new CreateDatabaseIfNotExists<CocodrinksContext>());
+            
         }
 
-        public DbSet<Cocodrinks.Models.User> User { get; set; }
+        public DbSet<Cocodrinks.Models.User> Users { get; set; }
         public DbSet<Cocodrinks.Models.Article> Articles { get; set; }
         public DbSet<Cocodrinks.Models.Order> Orders { get; set; }
         public DbSet<Cocodrinks.Models.Image> Images { get; set; }
