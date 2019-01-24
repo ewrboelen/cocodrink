@@ -1,4 +1,4 @@
-@model Cocodrinks.Models.Order
+@model Cocodrinks.Models.OrderView
 
 @{
     ViewData["Title"] = "Create";
@@ -17,6 +17,13 @@
                 <input asp-for="Comment" class="form-control" />
                 <span asp-validation-for="Comment" class="text-danger"></span>
             </div>
+            <div class="form-group">
+                <label asp-for="DeliveryDate" class="control-label"></label>
+                <input asp-for="DeliveryDate" class="form-control" />
+                <span asp-validation-for="DeliveryDate" class="text-danger"></span>
+            </div>
+            <partial name="_OrderLines" />
+            <partial name="_UpdateOrderLines" />
             <div class="form-group">
                 <input type="submit" value="Checkout" class="btn btn-primary" />
             </div>

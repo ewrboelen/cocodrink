@@ -86,8 +86,8 @@ namespace Cocodrinks.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Quantity = table.Column<int>(nullable: false),
-                    OrderId = table.Column<int>(nullable: false),
-                    ArticleId = table.Column<int>(nullable: false)
+                    ArticleId = table.Column<int>(nullable: false),
+                    OrderId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {

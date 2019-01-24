@@ -45,7 +45,6 @@
         </nav>
     </header>
     <div class="container">
-        <partial name="_CookieConsentPartial" />
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
@@ -53,6 +52,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
+            <partial name="_CookieConsentPartial" />
             &copy; 2019 - Cocodrinks - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>

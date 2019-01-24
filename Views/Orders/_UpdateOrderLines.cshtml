@@ -1,0 +1,16 @@
+@model Cocodrinks.Models.OrderView
+
+<div class="form-group">
+        <table><tr>
+            <th><label asp-for="newLineArticleId" class="control-label"></label></th>
+             <th><label asp-for="newLineQuantity" class="control-label"></label></th>
+              <th></th>
+        </tr>
+            <tr>
+       <td> <select asp-for="newLineArticleId" class ="form-control" asp-items="ViewBag.ArticleNames"></select></td>
+       <td><input asp-for="newLineQuantity" class="form-control" value="1"/> <span asp-validation-for="newLineQuantity" class="text-danger"></span></td> 
+        <td> <input type="submit" name="addArticle" value="Add article" class="btn btn-primary" /> </td>
+        
+        </tr></table>
+    </div>
+    <hr>

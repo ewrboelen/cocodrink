@@ -27,6 +27,14 @@ namespace Cocodrinks.Models
 
         public DbSet<Cocodrinks.Models.OrderLine> OrderLines { get; set; }
         public DbSet<Cocodrinks.Models.Image> Images { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<OrderLine>()
+                .HasOne(p => p.Order)
+                .WithMany(b => b.OrderLines)
+                .HasForeignKey(p => p.OrderId);
+        }
     }
 
     public class LoginViewModel
@@ -89,16 +97,29 @@ namespace Cocodrinks.Models
         public ICollection<OrderLine> OrderLines { get; set; }
     }
 
+    //the view is not for the database
+    public class OrderView : Order{
+        [Display(Name = "Amount")]
+        public int newLineQuantity{get; set;}
+
+        [Display(Name = "Article")]
+        public int newLineArticleId{get; set;}
+
+        public String addArticle{get;set;}
+        public ICollection<Article> Articles { get; set; }
+    }
+
     public class OrderLine{
         public int Id { get; set; }
         public int Quantity { get; set; }
 
-        public int OrderId { get; set; }
-
-        public Order Order{get; set; }
-
         public int ArticleId { get; set; }
         public Article Article{ get; set; }
+
+        public int OrderId { get; set; }
+        public Order Order{get; set; }
+
+
     }
 
     public class FileUpload

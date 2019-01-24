@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Cocodrinks.Migrations
 {
     [DbContext(typeof(CocodrinksContext))]
-    [Migration("20190123150851_initialagain")]
+    [Migration("20190124121126_initialagain")]
     partial class initialagain
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

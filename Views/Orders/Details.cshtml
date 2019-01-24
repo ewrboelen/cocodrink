@@ -1,4 +1,4 @@
-@model Cocodrinks.Models.Order
+@model Cocodrinks.Models.OrderView
 
 @{
     ViewData["Title"] = "Details";
@@ -18,6 +18,7 @@
         </dd>
     </dl>
 </div>
+<partial name="_OrderLines" />
 <div>
     <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>

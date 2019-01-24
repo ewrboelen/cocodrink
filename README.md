@@ -1,8 +1,19 @@
-# cocodrink
+
+# coco drinks shop
+### example shop for training purposes
 
 start the application with:
 
-c:\coco dotnet ef database update
-c:\coco dotnet run
+dotnet run
 
-browse to localhost:5000
+browse to https://localhost:5001
+
+
+the following frameworks are used:
+- dotnet core 2.2
+- razorpages
+- entity framework
+- log4net
+- swagger
+
+

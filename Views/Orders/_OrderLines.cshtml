@@ -1,0 +1,27 @@
+@model Cocodrinks.Models.OrderView
+
+<div class="form-group">
+    <label asp-for="OrderLines" class="control-label"></label>
+    <table class="table">
+    @{int i = 1;}
+    @foreach (var orderline in Model.OrderLines) 
+    { <tr>
+        <td>
+            @i
+        </td>
+        <td>
+            @Model.Articles.Where(x => x.Id == orderline.ArticleId).First().Name
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => orderline.Quantity)
+        </td>
+        <td>
+            <a asp-action="DeleteOrderLine" asp-route-id="@orderline.Id">Delete</a>
+        </td>
+        </tr>
+        i++;
+    }
+    </table>
+    <hr>
+</div>
+    
