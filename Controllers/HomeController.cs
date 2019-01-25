@@ -26,12 +26,12 @@ namespace Cocodrinks.Controllers
         }
         public IActionResult Index()
         {
-            Console.WriteLine(" Hi "+HttpContext.Session.GetString("username"));
-            if( HttpContext.Session.GetString("username") != null &&  HttpContext.Session.GetString("username").Length > 0){
+            _logger.LogInformation(" Hi "+HttpContext.Session.GetString("username"));
+            if( HttpContext.Session.GetString("userId") != null &&  HttpContext.Session.GetString("userId").Length > 0){
                 ViewData["username"] = HttpContext.Session.GetString("username");
                 return View();
             }else{
-                return this.Redirect("Home/Login");
+                return this.Redirect("/Home/Login");
             }
         }
 
@@ -52,12 +52,22 @@ namespace Cocodrinks.Controllers
                 //Console.WriteLine(" got form post "+Request.Form["Name"].ToString());
                 _logger.LogWarning(9, " got form post "+ Request.Form["Name"].ToString());
                 if(usercred.Name != null && usercred.Name.Length > 0){
-                    
-                    var found = DbHelper.finduser(_context,usercred.Name);
-                    if(found == true){
-                        Console.WriteLine("{0} logged in", usercred.Name);
+                    User user =null;
+                    var found = DbHelper.findUserId(_context,usercred.Name);
+                    if(found > 0){
+                        //check password
+                        user = _context.Users
+                            .Where(u => u.Id == found)
+                            .First();
+                        if(user !=null && user.Password == usercred.Password){    
+                            Console.WriteLine("{0} logged in", usercred.Name);
+                        }else{
+                            _logger.LogWarning("invalid password "+usercred.Password);
+                            usercred.ErrorMessage = "Invalid password";
+                            return View(usercred);
+                        }
                     }else{
-                        User user = new User();
+                        user = new User();
                         user.Name = usercred.Name;
                         user.Password = usercred.Password;
 
@@ -66,6 +76,7 @@ namespace Cocodrinks.Controllers
                         Console.WriteLine("{0} created ", user.Name);
                     }
                     HttpContext.Session.SetString("username", usercred.Name);
+                    HttpContext.Session.SetString("userId",user.Id.ToString());
                     return this.Redirect("Index");
                 }
             }
