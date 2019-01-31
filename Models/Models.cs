@@ -17,8 +17,7 @@ namespace Cocodrinks.Models
         public CocodrinksContext (DbContextOptions<CocodrinksContext> options)
             : base(options)
         {
-            //Database.SetInitializer<CocodrinksContext>(new CreateDatabaseIfNotExists<CocodrinksContext>());
-            
+            //TODO initializer options
         }
 
         public DbSet<Cocodrinks.Models.User> Users { get; set; }

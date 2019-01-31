@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Cocodrinks.Models;
+using Cocodrinks.Utilities;
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Logging;
@@ -29,7 +30,14 @@ namespace Cocodrinks.Controllers
         // GET: Articles
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Articles.ToListAsync());
+            var userId = HttpContext.Session.GetString("userId");
+            int accessLevel = AccessHelper.getAccessLevel(_context,userId);
+            if(accessLevel < 5){
+                return View("AdminIndex",await _context.Articles.ToListAsync());
+            }else{
+                return View(await _context.Articles.ToListAsync());
+            }
+
         }
 
         // GET: Articles/Details/5

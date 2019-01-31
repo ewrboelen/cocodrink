@@ -6,8 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Cocodrinks.Models;
+using Cocodrinks.Utilities;
 using Microsoft.Extensions.Logging;
-using System.Web;
+//using System.Web;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 
@@ -28,7 +29,19 @@ namespace Cocodrinks.Controllers
         public async Task<IActionResult> Index()
         {
             var cocodrinksContext = _context.Orders.Include(o => o.User);
-            return View(await _context.Orders.ToListAsync());
+            var userId = HttpContext.Session.GetString("userId");
+            if(userId == null){
+                return Redirect("/Home/Login");
+            }
+            ViewData["UserId"] = userId;
+            int accessLevel = AccessHelper.getAccessLevel(_context,userId);
+            if(accessLevel < 5){
+                return View(await _context.Orders.ToListAsync());
+            }else{
+                return View(await _context.Orders
+                    .Where(m => m.UserId == Int32.Parse(userId) )
+                    .ToListAsync() );
+            }
         }
 
         // GET: Orders/Details/5
@@ -114,7 +127,7 @@ namespace Cocodrinks.Controllers
         public async Task<IActionResult> Checkout([Bind("Id,Comment,BankAccount")] Order order)
         {
            // if (ModelState.IsValid){
-                order.UserId = 1;
+                order.UserId =  Int32.Parse(HttpContext.Session.GetString("userId"));
                 order.OrderLines = getOrderLinesFromSession();
 
                 foreach(var logline in _context.ChangeTracker.Entries() ){ //.Where(e => e.State == EntityState.Added)

@@ -29,6 +29,7 @@ namespace Cocodrinks.Controllers
             _logger.LogInformation(" Hi "+HttpContext.Session.GetString("username"));
             if( HttpContext.Session.GetString("userId") != null &&  HttpContext.Session.GetString("userId").Length > 0){
                 ViewData["username"] = HttpContext.Session.GetString("username");
+                ViewData["UserId"] = HttpContext.Session.GetString("userId");
                 return View();
             }else{
                 return this.Redirect("/Home/Login");
@@ -50,7 +51,7 @@ namespace Cocodrinks.Controllers
         {
             if(Request.Method == "POST"){
                 //Console.WriteLine(" got form post "+Request.Form["Name"].ToString());
-                _logger.LogWarning(9, " got form post "+ Request.Form["Name"].ToString());
+                _logger.LogInformation(9, " got form post "+ Request.Form["Name"].ToString());
                 if(usercred.Name != null && usercred.Name.Length > 0){
                     User user =null;
                     var found = DbHelper.findUserId(_context,usercred.Name);
@@ -60,20 +61,22 @@ namespace Cocodrinks.Controllers
                             .Where(u => u.Id == found)
                             .First();
                         if(user !=null && user.Password == usercred.Password){    
-                            Console.WriteLine("{0} logged in", usercred.Name);
+                            _logger.LogInformation(usercred.Name+" logged in");
                         }else{
                             _logger.LogWarning("invalid password "+usercred.Password);
                             usercred.ErrorMessage = "Invalid password";
                             return View(usercred);
                         }
                     }else{
+                        //TODO set in user controller...
                         user = new User();
                         user.Name = usercred.Name;
                         user.Password = usercred.Password;
-
+                        user.AccessLevel = 10;
+                        _logger.LogWarning("creating user "+usercred.Name);
                         _context.Users.Add(user);
                         _context.SaveChanges();
-                        Console.WriteLine("{0} created ", user.Name);
+                        
                     }
                     HttpContext.Session.SetString("username", usercred.Name);
                     HttpContext.Session.SetString("userId",user.Id.ToString());

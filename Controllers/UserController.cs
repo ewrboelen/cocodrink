@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Cocodrinks.Models;
+using Cocodrinks.Utilities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 
@@ -34,7 +35,17 @@ namespace Cocodrinks.Controllers
         // GET: User
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Users.ToListAsync());
+             var userId = HttpContext.Session.GetString("userId");
+            ViewData["UserId"] = userId;
+            int accessLevel = AccessHelper.getAccessLevel(_context,userId);
+            if(accessLevel < 5){
+                _logger.LogInformation("view userlist by "+userId+" with lvl "+accessLevel);
+                return View(await _context.Users.ToListAsync());
+            }else{
+                return View(await _context.Users
+                    .Where(m => m.Id == Int32.Parse(userId) )
+                    .ToListAsync() );
+            }
         }
 
         // GET: User/Details/5
@@ -42,7 +53,11 @@ namespace Cocodrinks.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                var sid = HttpContext.Session.GetString("userId");
+                if(sid == null){
+                    return NotFound();
+                }
+                return this.Redirect("/User/Details/"+sid);
             }
 
             var user = await _context.Users
@@ -68,8 +83,11 @@ namespace Cocodrinks.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Name,Password,CreateDate,Logincount")] User user)
         {
+            user.AccessLevel = 10;
             if (ModelState.IsValid)
             {
+                user.AccessLevel = 10;
+                _logger.LogInformation("creating user "+user.Name+" with lvl "+user.AccessLevel);
                 _context.Add(user);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
