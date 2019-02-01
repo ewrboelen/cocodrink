@@ -26,7 +26,7 @@ namespace Cocodrinks.Controllers
         }
         public IActionResult Index()
         {
-            _logger.LogInformation(" Hi "+HttpContext.Session.GetString("username"));
+            _logger.LogInformation(" Hi "+HttpContext.Session.GetString("username")+" id "+HttpContext.Session.GetString("userId"));
             if( HttpContext.Session.GetString("userId") != null &&  HttpContext.Session.GetString("userId").Length > 0){
                 ViewData["username"] = HttpContext.Session.GetString("username");
                 ViewData["UserId"] = HttpContext.Session.GetString("userId");

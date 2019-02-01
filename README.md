@@ -16,5 +16,6 @@ the following frameworks are used:
 - sqlite
 - log4net
 - swagger
+- itext
 
 

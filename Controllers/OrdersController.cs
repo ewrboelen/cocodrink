@@ -12,6 +12,13 @@ using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 
+using iTextSharp.text.pdf.parser;
+using System.util.collections;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.IO;
+using System.Net.Http.Headers;
+
 namespace Cocodrinks.Controllers
 {
     public class OrdersController : Controller
@@ -103,8 +110,6 @@ namespace Cocodrinks.Controllers
             order.Articles = _context.Articles.ToList();
             ViewData["ArticleNames"] = new SelectList(_context.Articles, "Id", "Name");
             order.OrderLines = getOrderLinesFromSession();
-            //var article = _context.Articles.Find(order.newLineArticleId); 
-            //line.Article = article;
             return View(order);
         }
 
@@ -114,7 +119,6 @@ namespace Cocodrinks.Controllers
         public IActionResult Checkout()//[Bind("Comment")] Order order)
         {
             Order order = new Order();
-            //order.Comment = Request.QueryString["Comment"];
             string val = HttpContext.Request.ToString(); //Request.QueryString["product_id"];
             _logger.LogInformation("-- step 2 "+Request.Query["Comment"]);
             order.Comment = Request.Query["Comment"];
@@ -126,25 +130,14 @@ namespace Cocodrinks.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Checkout([Bind("Id,Comment,BankAccount")] Order order)
         {
-           // if (ModelState.IsValid){
                 order.UserId =  Int32.Parse(HttpContext.Session.GetString("userId"));
                 order.OrderLines = getOrderLinesFromSession();
-
-                foreach(var logline in _context.ChangeTracker.Entries() ){ //.Where(e => e.State == EntityState.Added)
-                    _logger.LogWarning(logline.Entity.ToString() );
-                }
-                _context.SaveChanges();
-
+               _context.SaveChanges();
                 _context.Add(order);
-                foreach(var logline in _context.ChangeTracker.Entries() ){ //.Where(e => e.State == EntityState.Added)
-                    _logger.LogError(logline.Entity.ToString() );
-                }
                 await _context.SaveChangesAsync();
                 _logger.LogInformation("-- order created: "+order.Id);
                 
                 return RedirectToAction(nameof(Index));
-           // }
-          //  return View(order);
         }
 
         private void addOrderLineToSession(OrderView order)
@@ -244,6 +237,65 @@ namespace Cocodrinks.Controllers
             _context.Orders.Remove(order);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
+        }
+
+        public FileResult ExportPDF()
+        {
+
+            var orders = new List<Order>();
+            var userId = HttpContext.Session.GetString("userId");
+            if(userId == null){
+                return null;
+            }
+            ViewData["UserId"] = userId;
+            int accessLevel = AccessHelper.getAccessLevel(_context,userId);
+            if(accessLevel < 5){
+                orders =_context.Orders
+                    .Include(o => o.OrderLines)
+                    .ToList();
+            }else{
+                orders = _context.Orders
+                    .Where(m => m.UserId == Int32.Parse(userId) )
+                    .Include(o => o.OrderLines)
+                    .ToList();
+            }
+
+
+            byte[] pdfBytes;
+            using (MemoryStream memStream = new MemoryStream())
+            {
+                Document document = new Document();
+                PdfWriter writer = PdfWriter.GetInstance(document, memStream);
+                document.Open();
+
+                document.Add(new Paragraph("Order list:"));
+                foreach(var order in orders)
+                {
+                    document.Add(new Paragraph("Order: "+order.Id+"     deliverydate: "+order.DeliveryDate));
+                    PdfPTable table = new PdfPTable(3); 
+                    table.AddCell(" id ");
+                    table.AddCell(" name ");
+                    table.AddCell(" quantity ");
+                    foreach(var oline in order.OrderLines) 
+                    {
+                        var article = oline.Article;
+                        if(article == null){
+                            article = _context.Articles.Find(oline.ArticleId);
+                        }
+                        table.AddCell(oline.Id.ToString());
+                        table.AddCell(article.Name);
+                        table.AddCell(oline.Quantity.ToString());
+                        
+                    }
+                    document.Add(table);
+
+                }
+            
+                document.Close();
+                pdfBytes = memStream.ToArray();
+            }
+            return File(pdfBytes,"application/pdf","export.pdf");
+            
         }
 
         private bool OrderExists(int id)

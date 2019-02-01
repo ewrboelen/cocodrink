@@ -43,7 +43,7 @@ namespace Cocodrinks
 
             services.AddSession(options =>
             {
-                options.IdleTimeout = TimeSpan.FromSeconds(20);
+                options.IdleTimeout = TimeSpan.FromMinutes(10);
                 options.Cookie.HttpOnly = false;
             });
 
