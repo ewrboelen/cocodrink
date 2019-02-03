@@ -18,22 +18,40 @@ namespace Cocodrinks.Controllers
     {
         private readonly CocodrinksContext _context;
         private readonly ILogger _logger;
+        private IHttpContextAccessor _accessor;
 
-        public HomeController(CocodrinksContext context, ILoggerFactory logger)
+        public HomeController(CocodrinksContext context, ILoggerFactory logger,IHttpContextAccessor accessor)
         {
             _context = context;
             _logger = logger.CreateLogger("Cocodrinks.Controllers.HomeController");
+            _accessor = accessor;
         }
         public IActionResult Index()
         {
+            String sessionNr = generateSessionNumber();
+            var ip = _accessor.HttpContext?.Connection?.RemoteIpAddress?.ToString();
+            _logger.LogWarning("access from "+ip+" session "+sessionNr);
             _logger.LogInformation(" Hi "+HttpContext.Session.GetString("username")+" id "+HttpContext.Session.GetString("userId"));
+            IList<User> users = _context.Users.ToList();
+
             if( HttpContext.Session.GetString("userId") != null &&  HttpContext.Session.GetString("userId").Length > 0){
                 ViewData["username"] = HttpContext.Session.GetString("username");
                 ViewData["UserId"] = HttpContext.Session.GetString("userId");
-                return View();
-            }else{
-                return this.Redirect("/Home/Login");
+                if(userExistsAndActive(users,HttpContext.Session.GetString("userId"))){
+                    return View();
+                }
             }
+            return this.Redirect("/Home/Login");
+        }
+
+        private bool userExistsAndActive(IList<User> users, string userid)
+        {
+            foreach(User user in users){
+                if(user.Id.ToString() == userid){
+                    return true;
+                }
+            }
+            return false;
         }
 
         public IActionResult Privacy()
@@ -50,7 +68,6 @@ namespace Cocodrinks.Controllers
         public IActionResult Login(LoginViewModel usercred)
         {
             if(Request.Method == "POST"){
-                //Console.WriteLine(" got form post "+Request.Form["Name"].ToString());
                 _logger.LogInformation(9, " got form post "+ Request.Form["Name"].ToString());
                 if(usercred.Name != null && usercred.Name.Length > 0){
                     User user =null;
@@ -62,6 +79,8 @@ namespace Cocodrinks.Controllers
                             .First();
                         if(user !=null && user.Password == usercred.Password){    
                             _logger.LogInformation(usercred.Name+" logged in");
+                            user.Logincount++;
+                            _context.SaveChanges();
                         }else{
                             _logger.LogWarning("invalid password "+usercred.Password);
                             usercred.ErrorMessage = "Invalid password";
@@ -90,6 +109,23 @@ namespace Cocodrinks.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        //extra strong encrypted sessionnumber.
+        private String generateSessionNumber()
+        {
+            Random r = new Random();
+            long sessionNumber = r.Next();
+            for (int i =0; i<10; i++){
+                using (RNGCryptoServiceProvider rg = new RNGCryptoServiceProvider()){ 
+                    byte[] rno = new byte[4];    
+                    rg.GetBytes(rno);    
+                    int sessionExtra = BitConverter.ToInt32(rno, 0);
+                    sessionNumber += sessionExtra;
+                }
+            }
+            ViewData["sessionNumber"] = sessionNumber.ToString();
+            return sessionNumber.ToString();
         }
     }
 }

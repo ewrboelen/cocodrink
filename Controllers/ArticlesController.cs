@@ -176,7 +176,7 @@ namespace Cocodrinks.Controllers
         long size = files.Sum(f => f.Length);
 
         // full path to file in temp location
-        var filePath = _hostingEnvironment.WebRootPath+"\\media\\"; //Path.GetTempFileName();
+        var filePath = _hostingEnvironment.WebRootPath+Path.DirectorySeparatorChar+"media"+Path.DirectorySeparatorChar; //Path.GetTempFileName();
         _logger.LogInformation("---- saving "+files.Count()+ " files to "+filePath);
         foreach (var formFile in files)
         {

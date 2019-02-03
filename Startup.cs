@@ -40,6 +40,7 @@ namespace Cocodrinks
             options.UseSqlite(Configuration.GetConnectionString(this.getContext())));
             
             services.AddMemoryCache(); //scalability
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>(); // for ip logging
 
             services.AddSession(options =>
             {

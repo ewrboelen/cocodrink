@@ -36,15 +36,26 @@ namespace Cocodrinks.Controllers.Api
         public async Task<ActionResult<Order>> GetOrder(long id)
         {
             var order = await _context.Orders.FindAsync(id);
-
-            if (order == null)
-            {
-                return NotFound();
-            }
-
             return order;
         }
 
+        // POST: api/Order
+        [HttpPost]
+        public async Task<ActionResult<Order>> PostOrder(Order item)
+        {
+            _context.Orders.Add(item);
+            await _context.SaveChangesAsync();
+            return CreatedAtAction(nameof(GetOrder), new { id = item.Id }, item);
+        }
+
+        // PUT: api/Order/5
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutOrder(long id, Order item)
+        {
+            _context.Entry(item).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+            return NoContent();
+        }
         
     }
 }
