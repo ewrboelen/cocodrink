@@ -18,7 +18,7 @@
             </div>
             <div class="col"><br>
                 <p>please log in</p>
-                <p color="red">@Html.DisplayFor(model => model.ErrorMessage)</p>
+                <p class="error">@Html.DisplayFor(model => model.ErrorMessage)</p>
                 <form asp-action="Login">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="form-group row">

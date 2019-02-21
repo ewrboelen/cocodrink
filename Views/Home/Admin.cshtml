@@ -1,0 +1,38 @@
+@model Cocodrinks.Models.AdminViewModel
+
+<h1>System Overview</h1>
+<br>
+<h2>Articles</h2>
+<table class="table">
+@foreach (var article in Model.Articles) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => article.Name)
+            </td>
+        </tr>
+}
+</table>
+
+<h2>Users</h2>
+<table class="table">
+@foreach (var user in Model.Users) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => user.Name)
+            </td>
+        </tr>
+}
+</table>
+
+<h2>orders</h2>
+<table class="table">
+@foreach (var order in Model.Orders) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => order.Comment)
+            </td>
+        </tr>
+}
+</table>
+
+<h2>media</h2>

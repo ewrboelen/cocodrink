@@ -55,6 +55,9 @@ namespace Cocodrinks.Models
     }
     public class User
     {
+        public User(){
+            this.CreateDate = DateTime.Now;
+        }
         public int Id { get; set; }
         public string Name { get; set; }
         public string Password { get; set; }
@@ -83,6 +86,8 @@ namespace Cocodrinks.Models
         public Order() 
         {
             this.OrderLines = new HashSet<OrderLine>();
+            this.CreateDate = DateTime.Now;
+            this.DeliveryDate = DateTime.Now.AddDays(7);
         }
         public int Id { get; set; }
         public string BankAccount { get; set; }
@@ -121,6 +126,28 @@ namespace Cocodrinks.Models
         public Order Order{get; set; }
 
 
+    }
+
+    public class AdminViewModel
+    {
+        private CocodrinksContext _context;
+
+        public AdminViewModel()
+        {
+
+        }
+
+        public AdminViewModel(CocodrinksContext context)
+        {
+            _context = context;
+            Orders = _context.Orders.Include(o => o.OrderLines).ToList();
+            Articles = _context.Articles.ToList();
+            Users = _context.Users.ToList();
+        }
+
+        public ICollection<Order> Orders { get; set; }
+        public ICollection<Article> Articles { get; set; }
+        public ICollection<User> Users { get; set; }
     }
 
     public class FileUpload

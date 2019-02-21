@@ -111,6 +111,13 @@ namespace Cocodrinks.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
+        public IActionResult Admin()
+        {
+            AdminViewModel adminViewModel = new AdminViewModel(_context);
+             _logger.LogWarning("admin page loaded ");
+            return View(adminViewModel);
+        }
+
         //extra strong encrypted sessionnumber.
         private String generateSessionNumber()
         {

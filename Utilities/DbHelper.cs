@@ -37,7 +37,7 @@ namespace Cocodrinks.Utilities
             }
         }
 
-         internal static Int32 findUserId(CocodrinksContext context, string name)
+        internal static Int32 findUserId(CocodrinksContext context, string name)
         {
            Int32 userid = -1;
            using (var command = context.Database.GetDbConnection().CreateCommand())

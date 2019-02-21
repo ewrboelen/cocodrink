@@ -136,6 +136,9 @@ namespace Cocodrinks.Controllers
                 _context.Add(order);
                 await _context.SaveChangesAsync();
                 _logger.LogInformation("-- order created: "+order.Id);
+
+                //send to requestbin
+                RequestBinHelper.sendOrder(order);
                 
                 return RedirectToAction(nameof(Index));
         }
@@ -239,9 +242,9 @@ namespace Cocodrinks.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        //TODO set in helper
         public FileResult ExportPDF()
         {
-
             var orders = new List<Order>();
             var userId = HttpContext.Session.GetString("userId");
             if(userId == null){
