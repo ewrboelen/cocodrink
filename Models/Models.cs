@@ -23,10 +23,10 @@ namespace Cocodrinks.Models
         public DbSet<Cocodrinks.Models.User> Users { get; set; }
         public DbSet<Cocodrinks.Models.Article> Articles { get; set; }
         public DbSet<Cocodrinks.Models.Order> Orders { get; set; }
-
+        public DbSet<Cocodrinks.Models.Onderdelen> Onderdelen { get; set; }
         public DbSet<Cocodrinks.Models.OrderLine> OrderLines { get; set; }
         public DbSet<Cocodrinks.Models.Image> Images { get; set; }
-        public DbSet<Cocodrinks.Models.Onderdelen> Onderdelen { get; set; }
+        
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -90,7 +90,6 @@ namespace Cocodrinks.Models
         public string type { get; set; }
         public int hoeveelheid { get; set; }      
 
-        //public string color {get; set;}
     }
 
     public class Order

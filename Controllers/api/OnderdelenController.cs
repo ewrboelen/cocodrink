@@ -45,7 +45,8 @@ namespace Cocodrinks.Controllers.Api
             return todoItem;
         }
 
-        [HttpGet("{id}")]
+        // GET: api/Onderdelen/5/
+        [HttpGet("{id}/take")]
         public async Task<ActionResult<Onderdelen>> GetOnderdeelUitVoorraad(long id)
         {
             var todoItem = await _context.Onderdelen.FindAsync(id);

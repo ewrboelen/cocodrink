@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Cocodrinks.Migrations
 {
-    public partial class initialagain : Migration
+    public partial class InitialNext : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -36,6 +36,20 @@ namespace Cocodrinks.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Images", x => x.ID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Onderdelen",
+                columns: table => new
+                {
+                    id = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    type = table.Column<string>(nullable: true),
+                    hoeveelheid = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Onderdelen", x => x.id);
                 });
 
             migrationBuilder.CreateTable(
@@ -126,6 +140,9 @@ namespace Cocodrinks.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Images");
+
+            migrationBuilder.DropTable(
+                name: "Onderdelen");
 
             migrationBuilder.DropTable(
                 name: "OrderLines");
