@@ -26,6 +26,7 @@ namespace Cocodrinks.Models
 
         public DbSet<Cocodrinks.Models.OrderLine> OrderLines { get; set; }
         public DbSet<Cocodrinks.Models.Image> Images { get; set; }
+        public DbSet<Cocodrinks.Models.Onderdelen> Onderdelen { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -79,6 +80,17 @@ namespace Cocodrinks.Models
         public string Name { get; set; }
         public string Description { get; set; }       
         public string Imagelocation { get; set; } 
+
+        //public string color {get; set;}
+    }
+
+    public class Onderdelen
+    {
+        public int id { get; set; }
+        public string type { get; set; }
+        public int hoeveelheid { get; set; }      
+
+        //public string color {get; set;}
     }
 
     public class Order
@@ -222,6 +234,44 @@ namespace Cocodrinks.Models
                         Password = "admin",
                         Email = "test@test.test",
                         AccessLevel = 10
+                    }
+                );
+
+                 context.Onderdelen.AddRange(
+                    new Onderdelen
+                    {
+                        type = "Moertjes",
+                        hoeveelheid = 5000
+                    },
+                    new Onderdelen
+                    {
+                        type = "Wastrommels",
+                        hoeveelheid = 44
+                    },
+                    new Onderdelen
+                    {
+                        type = "Stekkers",
+                        hoeveelheid = 98
+                    },
+                    new Onderdelen
+                    {
+                        type = "Water filters",
+                        hoeveelheid = 280
+                    },
+                    new Onderdelen
+                    {
+                        type = "Stof filters",
+                        hoeveelheid = 143
+                    },
+                    new Onderdelen
+                    {
+                        type = "Knopjes",
+                        hoeveelheid = 2500
+                    },
+                    new Onderdelen
+                    {
+                        type = "Zekeringen",
+                        hoeveelheid = 3149
                     }
                 );
                 context.SaveChanges();
